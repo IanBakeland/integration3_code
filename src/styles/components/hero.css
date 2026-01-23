@@ -1,0 +1,130 @@
+.hero {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--color-gray-light);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+/* Hero Background */
+.hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    transform-origin: center;
+    will-change: transform, filter;
+}
+
+.hero__bg-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0.1;
+    pointer-events: none;
+    transform: rotate(-12deg) scale(1.5);
+    transform-origin: center;
+}
+
+.hero__bg-text-row {
+    display: flex;
+    white-space: nowrap;
+    animation: marquee 30s linear infinite;
+}
+
+.hero__bg-text-row:nth-child(even) {
+    animation-direction: reverse;
+}
+
+.hero__bg-text-row span {
+    font-size: 6rem;
+    color: var(--color-black);
+    line-height: 1.1;
+}
+
+/* PukPuk Container */
+.pukpuk {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 20;
+    cursor: pointer;
+    position: relative;
+    pointer-events: auto;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.pukpuk__glow {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: linear-gradient(to right, var(--color-neon), var(--color-cyan));
+    filter: blur(3rem);
+    opacity: 0.6;
+    animation: pulse 1s ease-in-out infinite;
+    transform: scale(1.5);
+}
+
+.pukpuk__wrapper {
+    position: relative;
+    width: 16rem;
+    height: 16rem;
+    pointer-events: none;
+}
+
+.pukpuk__img {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0.3125rem 0.3125rem 0 rgba(0, 0, 0, 1));
+    object-fit: contain;
+}
+
+.hero__status {
+    margin-top: 2rem;
+    position: relative;
+}
+
+.hero__status-text {
+    font-size: 1.25rem;
+    letter-spacing: 0.2em;
+    transition: all 0.3s;
+    color: var(--color-black);
+}
+
+.hero__status-text.charging {
+    color: var(--color-pink);
+    transform: scale(1.1);
+    letter-spacing: 0.5em;
+}
+
+.charge-bar {
+    width: 16rem;
+    height: 2rem;
+    border: 0.25rem solid var(--color-black);
+    margin-top: 1rem;
+    padding: 0.25rem;
+    position: relative;
+    background: var(--color-white);
+    overflow: hidden;
+}
+
+.charge-bar__fill {
+    height: 100%;
+    position: relative;
+    z-index: 10;
+    transition: width 75ms linear;
+    border-right: 0.25rem solid var(--color-black);
+    width: 0%;
+    background-color: var(--color-neon);
+}

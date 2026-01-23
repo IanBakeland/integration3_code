@@ -1,3 +1,5 @@
+@import './components/hero.css';
+
 :root {
   --color-black: #000000;
   --color-white: #ffffff;
@@ -10,8 +12,6 @@
   --color-yellow: #ffff00;
   --color-paper: #eaddcf;
 }
-
-@import './components/hero.css';
 
 html {
   scroll-behavior: smooth;
