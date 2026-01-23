@@ -38,3 +38,13 @@ body.locked {
   font-family: 'Courier New', monospace;
   font-weight: bold;
 }
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
