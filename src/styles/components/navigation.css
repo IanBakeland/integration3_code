@@ -1,0 +1,212 @@
+.navbar {
+    position: fixed;
+    top: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(0);
+    width: 95%;
+    max-width: 90rem;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(1rem);
+    -webkit-backdrop-filter: blur(1rem);
+    border: 0.125rem solid var(--color-black);
+    padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+    clip-path: polygon(1rem 0, 100% 0, 100% calc(100% - 1rem), calc(100% - 1rem) 100%, 0 100%, 0 1rem);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-50%) translateY(-200%);
+    transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.navbar.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+
+.navbar__logo {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.navbar__logo-img {
+    height: 3.5rem;
+    width: auto;
+    transition: opacity 0.2s ease;
+}
+
+.navbar__logo-img--default {
+    opacity: 1;
+}
+
+.navbar__logo-img--hover {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+.navbar__logo:hover .navbar__logo-img--default {
+    opacity: 0;
+}
+
+.navbar__logo:hover .navbar__logo-img--hover {
+    opacity: 1;
+}
+
+.navbar__menu {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    background: var(--color-black);
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    clip-path: polygon(1rem 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.navbar__link {
+    text-decoration: none;
+    color: var(--color-white);
+    font-family: 'Arial Black', 'Impact', sans-serif;
+    font-size: 0.875rem;
+    padding: 0.75rem 1.5rem;
+    text-transform: uppercase;
+    transition: all 0.2s;
+}
+
+.navbar__link:hover {
+    background: var(--color-white);
+    color: var(--color-black);
+}
+
+.navbar__menu .navbar__link:last-child {
+    background: var(--color-neon);
+    color: var(--color-black);
+}
+
+.navbar__menu .navbar__link:last-child:hover {
+    background: var(--color-pink);
+    color: var(--color-white);
+}
+
+.navbar__toggle {
+    display: none;
+}
+
+.navbar__tickets-btn {
+    display: none;
+    background: var(--color-neon);
+    color: var(--color-black);
+    text-decoration: none;
+    font-size: 0.75rem;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .navbar {
+        top: 1rem;
+        width: calc(100% - 2rem);
+        padding: 0.75rem 1rem;
+        clip-path: none;
+        background: transparent;
+        border: none;
+        backdrop-filter: none;
+    }
+
+    .navbar::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(243, 243, 243, 0.6);
+        backdrop-filter: blur(10px);
+        border: 0.125rem solid var(--color-black);
+        clip-path: polygon(1rem 0, 100% 0, 100% calc(100% - 1rem), calc(100% - 1rem) 100%, 0 100%, 0 1rem);
+        z-index: -1;
+    }
+
+    .navbar__logo-img {
+        height: 2rem;
+    }
+
+    .navbar__tickets-btn {
+        display: block;
+        order: 2;
+        margin-left: auto;
+        margin-right: 0.75rem;
+    }
+
+    .navbar__toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        background: var(--color-black);
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+        order: 3;
+    }
+
+    .navbar__toggle-line {
+        width: 100%;
+        height: 0.2rem;
+        background: var(--color-neon);
+        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .navbar__toggle.open .navbar__toggle-line:nth-child(1) {
+        transform: translateY(0.55rem) rotate(45deg);
+    }
+
+    .navbar__toggle.open .navbar__toggle-line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .navbar__toggle.open .navbar__toggle-line:nth-child(3) {
+        transform: translateY(-0.55rem) rotate(-45deg);
+    }
+
+    .navbar__menu {
+        position: fixed;
+        top: 5rem;
+        left: 1rem;
+        right: 1rem;
+        background: var(--color-black);
+        padding: 1.5rem;
+        flex-direction: column;
+        gap: 0.75rem;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(2rem);
+        transition: all 0.3s;
+    }
+
+    .navbar__menu.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .navbar__link {
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+        text-align: center;
+        width: 100%;
+    }
+
+    .navbar__link--tickets {
+        display: none;
+    }
+}
