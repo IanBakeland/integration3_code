@@ -1,4 +1,5 @@
 @import './components/hero.css';
+@import './components/navigation.css';
 
 :root {
   --color-black: #000000;
