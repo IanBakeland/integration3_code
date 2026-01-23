@@ -1,1 +1,2 @@
-import './style.css'
+// Section imports
+import { initHero } from './sections/hero.js';
