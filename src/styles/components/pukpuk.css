@@ -1,0 +1,462 @@
+.pp-universe {
+    position: relative;
+    width: 100%;
+    background-color: #ff0099;
+    margin-top: -0.125rem;
+}
+
+/* Jagged Edge Transition */
+.pp-universe__edge-top {
+    position: absolute;
+    top: -4.5rem;
+    left: 0;
+    width: 100%;
+    height: 5rem;
+    background: transparent;
+    z-index: 5;
+    background-color: #ff0099;
+    clip-path: polygon(0% 100%, 0% 0%,
+            5% 40%, 10% 0%,
+            15% 60%, 20% 10%,
+            25% 50%, 30% 0%,
+            35% 70%, 40% 10%,
+            45% 50%, 50% 0%,
+            55% 60%, 60% 10%,
+            65% 80%, 70% 0%,
+            75% 40%, 80% 10%,
+            85% 60%, 90% 0%,
+            95% 50%, 100% 0%,
+            100% 100%);
+}
+
+.pp-universe__content {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 6rem 1rem;
+}
+
+.pp-universe__bg-gradient {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 70% 30%, var(--color-neon), transparent 40%),
+        radial-gradient(circle at 20% 80%, #00ffff, transparent 40%);
+    mix-blend-mode: hard-light;
+    opacity: 0.8;
+}
+
+.pp-universe__bg-noise {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='1'/%3E%3C/svg%3E");
+    opacity: 0.2;
+    mix-blend-mode: overlay;
+}
+
+.pp-universe__giant-text {
+    position: absolute;
+    font-size: 25vw;
+    line-height: 0.8;
+    color: transparent;
+    -webkit-text-stroke: 0.25rem var(--color-black);
+    text-align: center;
+    opacity: 0.1;
+    z-index: 0;
+    white-space: nowrap;
+    transform: rotate(-15deg);
+}
+
+/* Puk Puk Figure */
+.pp-universe__figure {
+    position: relative;
+    z-index: 5;
+    width: 40vw;
+    height: 40vw;
+    max-width: 30rem;
+    max-height: 30rem;
+    filter: drop-shadow(1rem 1rem 0 rgba(0, 0, 0, 0.5));
+}
+
+.pp-universe__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0.5rem 0.5rem 0 rgba(0, 0, 0, 0.2));
+}
+
+/* Floating Cards */
+.pp-universe__cards {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.pp-card {
+    position: absolute;
+    background: var(--color-white);
+    border: 0.25rem solid var(--color-black);
+    padding: 1.5rem;
+    box-shadow: 0.5rem 0.5rem 0 var(--color-black);
+    max-width: 20rem;
+    pointer-events: auto;
+    transition: transform 0.2s;
+}
+
+.pp-card:hover {
+    transform: scale(1.05);
+    z-index: 20;
+}
+
+.pp-card--1 {
+    top: 20%;
+    left: 10%;
+    transform: rotate(-5deg);
+}
+
+.pp-card--2 {
+    bottom: 20%;
+    right: 10%;
+    transform: rotate(3deg);
+    max-width: 25rem;
+}
+
+.pp-card__label {
+    display: block;
+    font-size: 0.875rem;
+    border-bottom: 0.125rem solid var(--color-black);
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-gray-dark);
+}
+
+.pp-card__text {
+    font-size: 2.5rem;
+    line-height: 1;
+}
+
+.pp-card__tag {
+    background: var(--color-black);
+    color: var(--color-neon);
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    transform: skewX(-10deg);
+}
+
+.pp-card__desc {
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+/* Character Styles */
+.character-pukpuk {
+    position: relative;
+    transform: scale(1.25);
+    transition: transform 0.3s;
+    transform-origin: bottom;
+    filter: drop-shadow(0.9375rem 0.9375rem 0 rgba(0, 0, 0, 0.4));
+    z-index: 20;
+}
+
+.pukpuk-comic {
+    width: 6.25rem;
+    height: 6.25rem;
+}
+
+.figure-label {
+    position: absolute;
+    bottom: -1.5rem;
+    right: -1.5rem;
+    background: var(--color-white);
+    border: 0.1875rem solid var(--color-black);
+    padding: 0.25rem 0.5rem;
+    transform: rotate(6deg);
+    box-shadow: 0.25rem 0.25rem 0 black;
+    z-index: 30;
+}
+
+.figure-label span {
+    font-size: 1.125rem;
+    color: var(--color-black);
+}
+
+/* Comic Dialogue */
+.comic-dialogue {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+    position: relative;
+    padding-bottom: 3rem;
+}
+
+.pow-text {
+    position: absolute;
+    top: -1.5rem;
+    right: 0;
+    font-size: 6rem;
+    line-height: 1;
+    color: var(--color-cyan);
+    opacity: 0.4;
+    user-select: none;
+    z-index: 0;
+    transform: rotate(12deg);
+    -webkit-text-stroke: 0.125rem var(--color-black);
+}
+
+/* Speech Bubble */
+.speech-bubble {
+    position: relative;
+    background: var(--color-white);
+    border: 0.25rem solid var(--color-black);
+    padding: 1.5rem;
+    box-shadow: 0.5rem 0.5rem 0 black;
+    z-index: 20;
+    border-radius: 2.5rem 2.5rem 2.5rem 0.625rem;
+    color: var(--color-black);
+    width: 100%;
+}
+
+.speech-tail {
+    position: absolute;
+    bottom: -1.25rem;
+    left: -0.25rem;
+    width: 1.875rem;
+    height: 1.875rem;
+    background: var(--color-white);
+    border-left: 0.25rem solid var(--color-black);
+    border-bottom: 0.25rem solid var(--color-black);
+    transform: skewX(20deg);
+}
+
+.speech-tail-cover {
+    position: absolute;
+    bottom: -0.875rem;
+    left: 0.25rem;
+    width: 1.875rem;
+    height: 1.875rem;
+    background: var(--color-white);
+    transform: skewX(20deg);
+    z-index: 30;
+}
+
+.speech-title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 0.85;
+    letter-spacing: -0.05em;
+    color: var(--color-black);
+}
+
+.speech-highlight {
+    color: var(--color-pink);
+    filter: drop-shadow(0.125rem 0.125rem 0 black);
+}
+
+.speech-content {
+    font-weight: bold;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    color: var(--color-black);
+    max-width: 64rem;
+}
+
+.speech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.speech-tag {
+    padding: 0.5rem 1rem;
+    border: 0.1875rem solid var(--color-black);
+    display: inline-block;
+    box-shadow: 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.2);
+    font-size: 0.875rem;
+}
+
+.speech-tag-yellow {
+    background-color: var(--color-neon);
+    color: var(--color-black);
+    transform: rotate(-1deg);
+}
+
+.speech-tag-pink {
+    background-color: var(--color-pink);
+    color: var(--color-white);
+    transform: rotate(1deg);
+}
+
+/* CTA Button */
+.cta-button {
+    margin-top: 2rem;
+    width: 100%;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    font-size: 1.5rem;
+    padding: 1rem 1.5rem;
+    border: 0.25rem solid transparent;
+    cursor: pointer;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0.375rem 0.375rem 0px #888;
+    transition: all 0.2s;
+}
+
+.cta-button:hover {
+    background-color: var(--color-neon);
+    color: var(--color-black);
+    border-color: var(--color-black);
+}
+
+.cta-arrow {
+    font-size: 1.875rem;
+    transition: transform 0.2s;
+}
+
+.cta-button:hover .cta-arrow {
+    transform: translateX(1.5rem);
+}
+
+/* Transition Strip */
+.transition-strip {
+    width: 100%;
+    height: 8rem;
+    background-image: url('https://www.transparenttextures.com/patterns/caution-stripe.png?crossorigin=anonymous');
+    background-repeat: repeat-x;
+    background-size: contain;
+    position: relative;
+    z-index: 10;
+    border-top: 0.25rem solid var(--color-black);
+    border-bottom: 0.25rem solid var(--color-black);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .pp-universe__figure {
+        width: 70vw;
+        height: 70vw;
+        margin-top: -20%;
+    }
+
+    .pp-card--1 {
+        top: 10%;
+        left: 5%;
+        transform: rotate(-2deg);
+        max-width: 15rem;
+    }
+
+    .pp-card--2 {
+        bottom: 10%;
+        right: 5%;
+        max-width: 18rem;
+    }
+
+    .pp-card__text {
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .comic-dialogue {
+        padding: 3rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .pow-text {
+        top: -2.5rem;
+        font-size: 14rem;
+    }
+
+    .speech-bubble {
+        border-width: 0.375rem;
+        padding: 4rem;
+        box-shadow: 1rem 1rem 0 black;
+        border-radius: 5rem 5rem 5rem 0.625rem;
+    }
+
+    .speech-tail {
+        bottom: -1.75rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-left-width: 0.375rem;
+        border-bottom-width: 0.375rem;
+    }
+
+    .speech-tail-cover {
+        bottom: -1.125rem;
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .speech-title {
+        font-size: 6rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .speech-highlight {
+        filter: drop-shadow(0.25rem 0.25rem 0 black);
+    }
+
+    .speech-content {
+        font-size: 1.5rem;
+        gap: 2rem;
+    }
+
+    .speech-tag {
+        font-size: 1.125rem;
+    }
+
+    .cta-button {
+        margin-top: 3rem;
+        font-size: 2.5rem;
+        padding: 1.5rem 2.5rem;
+        box-shadow: 0.625rem 0.625rem 0 #888;
+    }
+
+    .cta-arrow {
+        font-size: 3rem;
+    }
+
+    .character-pukpuk {
+        transform: scale(1.5);
+    }
+
+    .character-pukpuk:hover {
+        transform: scale(1.7);
+    }
+
+    .figure-label {
+        bottom: -2.5rem;
+        right: -2.5rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .figure-label span {
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .comic-dialogue {
+        padding-right: 6rem;
+    }
+
+    .character-pukpuk {
+        transform: scale(2);
+    }
+
+    .character-pukpuk:hover {
+        transform: scale(2.2);
+    }
+}

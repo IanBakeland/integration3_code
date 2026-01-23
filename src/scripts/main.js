@@ -1,6 +1,8 @@
 // Section imports
 import { initNavigation } from './sections/navigation.js';
 import { initHero } from './sections/hero.js';
+import { initPukPukAnimations } from './sections/pukpuk.js';
+
 
 
 initNavigation();
@@ -25,3 +27,5 @@ function unlockContent() {
         navbar.classList.add('visible');
     }
 }
+
+initPukPukAnimations();
