@@ -1,5 +1,6 @@
 @import './components/hero.css';
 @import './components/navigation.css';
+@import './components/pukpuk.css';
 
 :root {
   --color-black: #000000;
