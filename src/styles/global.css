@@ -13,10 +13,11 @@
 @import './components/footer.css';
 
 /* ============================================ */
-/* CSS VARIABLES */
+/* CSS VARIABLES - Design Tokens */
 /* ============================================ */
 
 :root {
+  /* Colors */
   --color-black: #000000;
   --color-white: #ffffff;
   --color-gray-light: #f3f3f3;
@@ -27,6 +28,54 @@
   --color-cyan: #00ffff;
   --color-yellow: #ffff00;
   --color-paper: #eaddcf;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  /* Typography - Font Sizes */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2rem;
+  --font-size-4xl: 2.5rem;
+  --font-size-5xl: 3rem;
+
+  /* Typography - Font Families */
+  --font-sans: 'Arial', sans-serif;
+  --font-brutal: 'Arial Black', 'Impact', sans-serif;
+  --font-mono: 'Courier New', monospace;
+
+  /* Border Radius */
+  --radius-sm: 0.125rem;
+  --radius-base: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-full: 9999px;
+
+  /* Z-index Scale */
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-sticky: 500;
+  --z-navbar: 1000;
+  --z-modal: 2000;
+  --z-tooltip: 3000;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  --transition-smooth: 0.6s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 /* ============================================ */
@@ -46,7 +95,7 @@
 /* ============================================ */
 
 ::-webkit-scrollbar {
-  width: 0.75rem;
+  width: var(--space-3);
 }
 
 ::-webkit-scrollbar-track {
@@ -55,7 +104,7 @@
 
 ::-webkit-scrollbar-thumb {
   background: var(--color-neon);
-  border: 0.125rem solid var(--color-black);
+  border: var(--radius-sm) solid var(--color-black);
 }
 
 /* ============================================ */
@@ -69,7 +118,7 @@ html {
 body {
   background-color: var(--color-gray-light);
   overflow-x: hidden;
-  font-family: 'Arial', sans-serif;
+  font-family: var(--font-sans);
   line-height: 1.5;
   color: var(--color-black);
 }
@@ -83,12 +132,12 @@ body.locked {
 /* ============================================ */
 
 .font-brutal {
-  font-family: 'Arial Black', 'Impact', sans-serif;
+  font-family: var(--font-brutal);
   letter-spacing: -0.05em;
 }
 
 .font-mono {
-  font-family: 'Courier New', monospace;
+  font-family: var(--font-mono);
   font-weight: bold;
 }
 
@@ -101,7 +150,7 @@ body.locked {
 }
 
 .text-stroke {
-  -webkit-text-stroke: 0.125rem var(--color-black);
+  -webkit-text-stroke: var(--radius-sm) var(--color-black);
   color: transparent;
 }
 

@@ -1,10 +1,10 @@
 .newsletter {
     position: relative;
     width: 100%;
-    padding: 6rem 1rem;
+    padding: 6rem var(--space-4);
     overflow: hidden;
     background-color: var(--color-white);
-    border-top: 0.5rem solid var(--color-black);
+    border-top: var(--space-2) solid var(--color-black);
 }
 
 .newsletter__bg {
@@ -48,30 +48,30 @@
 }
 
 .newsletter__title {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+    font-size: var(--font-size-4xl);
+    margin-bottom: var(--space-2);
     color: var(--color-black);
     text-transform: uppercase;
 }
 
 .newsletter__text {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-8);
     color: var(--color-black);
     font-weight: bold;
 }
 
 .newsletter__form {
     display: flex;
-    gap: 1rem;
+    gap: var(--space-4);
     justify-content: center;
     flex-wrap: wrap;
 }
 
 .newsletter__input {
-    padding: 1rem;
-    border: 0.25rem solid var(--color-black);
-    font-size: 1rem;
+    padding: var(--space-4);
+    border: var(--radius-base) solid var(--color-black);
+    font-size: var(--font-size-base);
     width: 20rem;
     max-width: 100%;
     background: var(--color-white);
@@ -85,13 +85,13 @@
 }
 
 .newsletter__submit {
-    padding: 1rem 2rem;
+    padding: var(--space-4) var(--space-8);
     background: var(--color-black);
     color: var(--color-neon);
-    border: 0.25rem solid var(--color-black);
-    font-size: 1.25rem;
+    border: var(--radius-base) solid var(--color-black);
+    font-size: var(--font-size-xl);
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all var(--transition-fast);
 }
 
 .newsletter__submit:hover {

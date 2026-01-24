@@ -5,24 +5,24 @@
     position: relative;
     overflow: hidden;
     padding: 5rem 0;
-    border-top: 0.5rem solid var(--color-black);
+    border-top: var(--space-2) solid var(--color-black);
 }
 
 .censored__container {
     max-width: 80rem;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 var(--space-4);
     z-index: 10;
     position: relative;
 }
 
 .censored__title {
     font-size: 3.75rem;
-    margin-bottom: 3rem;
+    margin-bottom: var(--space-12);
     text-align: center;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 48em) {
     .censored__title {
         font-size: 6rem;
     }
@@ -31,30 +31,30 @@
 .censored__grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: var(--space-10);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 48em) {
     .censored__grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 .censored__text {
-    font-size: 1.25rem;
-    border: 0.25rem solid var(--color-black);
-    padding: 1.5rem;
+    font-size: var(--font-size-xl);
+    border: var(--radius-base) solid var(--color-black);
+    padding: var(--space-6);
     background: var(--color-gray-light);
 }
 
 .censored__photo {
     position: relative;
     height: 24rem;
-    border: 0.25rem solid var(--color-black);
+    border: var(--radius-base) solid var(--color-black);
     background-size: cover;
     background-position: center;
     filter: grayscale(100%);
-    transition: filter 0.5s;
+    transition: filter var(--transition-slow);
 }
 
 .censored__photo:hover {
@@ -68,8 +68,8 @@
     transform: translate(-50%, -50%);
     background: var(--color-black);
     color: var(--color-white);
-    font-size: 3rem;
-    padding: 0.5rem 2rem;
+    font-size: var(--font-size-5xl);
+    padding: var(--space-2) var(--space-8);
     cursor: grab;
     user-select: none;
     z-index: 10;
