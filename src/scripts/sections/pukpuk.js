@@ -39,12 +39,4 @@ export function initPukPukAnimations() {
         }
     });
 
-    // Floating animation for PukPuk
-    gsap.to('.pp-universe__img', {
-        y: -20,
-        duration: 2,
-        repeat: -1,
-        yoyo: true,
-        ease: 'sine.inOut'
-    });
 }
