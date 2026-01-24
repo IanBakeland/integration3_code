@@ -56,3 +56,16 @@ body.locked {
     transform: translateX(-50%);
   }
 }
+
+::-webkit-scrollbar {
+  width: 0.75rem;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-neon);
+  border: 0.125rem solid var(--color-black);
+}
