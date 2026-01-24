@@ -169,3 +169,10 @@
     color: var(--color-white);
     transform: rotate(0deg) scale(1.05);
 }
+
+/* Prevent image dragging in gallery */
+.museum-card img {
+    user-select: none;
+    pointer-events: none;
+    -webkit-user-drag: none;
+}
