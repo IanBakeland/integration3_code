@@ -3,6 +3,7 @@
 /* ============================================ */
 
 @import './components/hero.css';
+@import './components/intro.css';
 @import './components/pukpuk.css';
 @import './components/mask.css';
 @import './components/bear.css';
