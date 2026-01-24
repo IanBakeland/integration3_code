@@ -3,6 +3,7 @@ import { initNavigation } from './sections/navigation.js';
 import { initHero } from './sections/hero.js';
 import { initPukPukAnimations } from './sections/pukpuk.js';
 import { initMaskSection } from './sections/mask.js';
+import { initBearSection } from './sections/bear.js';
 
 
 
@@ -32,3 +33,4 @@ function unlockContent() {
 
 initPukPukAnimations();
 initMaskSection();
+initBearSection();
