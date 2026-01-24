@@ -195,8 +195,9 @@
 }
 
 .footer__socials a {
-    color: var(--color-black);
+    color: var(--color-white);
     text-decoration: none;
+    transition: color 0.3s;
 }
 
 .footer__socials a:hover {
