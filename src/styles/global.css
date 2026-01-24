@@ -4,6 +4,7 @@
 @import './components/mask.css';
 @import './components/bear.css';
 @import './components/censored.css';
+@import './components/museum-visit.css';
 
 :root {
   --color-black: #000000;
