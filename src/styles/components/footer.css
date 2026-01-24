@@ -162,3 +162,43 @@
     filter: blur(0.1rem);
     opacity: 0.8;
 }
+
+.footer__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 0.125rem solid var(--color-gray-dark);
+    color: var(--color-gray);
+    font-size: 0.75rem;
+}
+
+.footer__partners {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.footer__partner-logo {
+    height: 3.5rem;
+    width: auto;
+    transition: transform 0.3s;
+}
+
+.footer__partner-logo:hover {
+    transform: scale(1.1);
+}
+
+.footer__socials {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer__socials a {
+    color: var(--color-black);
+    text-decoration: none;
+}
+
+.footer__socials a:hover {
+    color: var(--color-neon);
+}
