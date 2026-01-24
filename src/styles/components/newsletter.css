@@ -1,0 +1,24 @@
+.newsletter {
+    position: relative;
+    width: 100%;
+    padding: 6rem 1rem;
+    overflow: hidden;
+    background-color: var(--color-white);
+    border-top: 0.5rem solid var(--color-black);
+}
+
+.newsletter__bg {
+    position: absolute;
+    inset: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(90deg, var(--color-neon), var(--color-pink));
+    opacity: 1;
+    animation: mask-scroll 4s linear infinite;
+    mask-image: repeating-linear-gradient(-45deg, black, black 3rem, transparent 3rem, transparent 6rem);
+    -webkit-mask-image: repeating-linear-gradient(-45deg, black, black 3rem, transparent 3rem, transparent 6rem);
+    mask-size: 200% 200%;
+    -webkit-mask-size: 200% 200%;
+    transition: opacity 0.4s ease;
+    z-index: 0;
+}
