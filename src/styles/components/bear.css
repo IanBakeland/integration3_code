@@ -69,7 +69,7 @@
 }
 
 .bear__content-box {
-    width: 50%;
+    width: 90%;
     z-index: 10;
     padding: 2rem;
     background: rgba(0, 0, 0, 0.8);
@@ -78,9 +78,9 @@
     transform: rotate(-2deg);
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
     .bear__content-box {
-        width: 90%;
+        width: 50%;
     }
 }
 

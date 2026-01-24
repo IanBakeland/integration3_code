@@ -70,15 +70,24 @@
     transform: rotate(-15deg);
 }
 
-/* Puk Puk Figure */
+/* Puk Puk Figure - Mobile First */
 .pp-universe__figure {
     position: relative;
     z-index: 5;
-    width: 40vw;
-    height: 40vw;
+    width: 70vw;
+    height: 70vw;
+    margin-top: -20%;
     max-width: 30rem;
     max-height: 30rem;
     filter: drop-shadow(1rem 1rem 0 rgba(0, 0, 0, 0.5));
+}
+
+@media (min-width: 768px) {
+    .pp-universe__figure {
+        width: 40vw;
+        height: 40vw;
+        margin-top: 0;
+    }
 }
 
 .pp-universe__img {
@@ -112,17 +121,49 @@
     z-index: 20;
 }
 
+/* Card 1 - Mobile First */
 .pp-card--1 {
-    top: 20%;
-    left: 10%;
-    transform: rotate(-5deg);
+    top: 10%;
+    left: 5%;
+    transform: rotate(-2deg);
+    max-width: 15rem;
 }
 
+@media (min-width: 768px) {
+    .pp-card--1 {
+        top: 20%;
+        left: 10%;
+        transform: rotate(-5deg);
+        max-width: 20rem;
+    }
+}
+
+/* Card 2 - Mobile First */
 .pp-card--2 {
-    bottom: 20%;
-    right: 10%;
+    bottom: 10%;
+    right: 5%;
     transform: rotate(3deg);
-    max-width: 25rem;
+    max-width: 18rem;
+}
+
+@media (min-width: 768px) {
+    .pp-card--2 {
+        bottom: 20%;
+        right: 10%;
+        max-width: 25rem;
+    }
+}
+
+/* Card Text - Mobile First */
+.pp-card__text {
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+@media (min-width: 768px) {
+    .pp-card__text {
+        font-size: 2.5rem;
+    }
 }
 
 .pp-card__label {
@@ -339,32 +380,6 @@
     z-index: 10;
     border-top: 0.25rem solid var(--color-black);
     border-bottom: 0.25rem solid var(--color-black);
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-    .pp-universe__figure {
-        width: 70vw;
-        height: 70vw;
-        margin-top: -20%;
-    }
-
-    .pp-card--1 {
-        top: 10%;
-        left: 5%;
-        transform: rotate(-2deg);
-        max-width: 15rem;
-    }
-
-    .pp-card--2 {
-        bottom: 10%;
-        right: 5%;
-        max-width: 18rem;
-    }
-
-    .pp-card__text {
-        font-size: 1.5rem;
-    }
 }
 
 @media (min-width: 768px) {
