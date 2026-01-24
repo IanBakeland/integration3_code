@@ -20,3 +20,36 @@
     padding: 0 2rem;
     margin-bottom: 4rem;
 }
+
+@media (min-width: 768px) {
+    .museum__header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+}
+
+.museum__title {
+    color: var(--color-white);
+    line-height: 0.9;
+}
+
+.museum__title-small {
+    display: block;
+    font-size: 1rem;
+    color: var(--color-neon);
+    letter-spacing: 0.2em;
+    margin-bottom: 0.5rem;
+}
+
+.museum__title-large {
+    display: block;
+    font-size: clamp(2.5rem, 8vw, 6rem);
+}
+
+.museum__intro {
+    max-width: 30rem;
+    color: var(--color-gray);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
