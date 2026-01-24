@@ -1,0 +1,102 @@
+.newsletter {
+    position: relative;
+    width: 100%;
+    padding: 6rem 1rem;
+    overflow: hidden;
+    background-color: var(--color-white);
+    border-top: 0.5rem solid var(--color-black);
+}
+
+.newsletter__bg {
+    position: absolute;
+    inset: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(90deg, var(--color-neon), var(--color-pink));
+    opacity: 1;
+    animation: mask-scroll 4s linear infinite;
+    mask-image: repeating-linear-gradient(-45deg, black, black 3rem, transparent 3rem, transparent 6rem);
+    -webkit-mask-image: repeating-linear-gradient(-45deg, black, black 3rem, transparent 3rem, transparent 6rem);
+    mask-size: 200% 200%;
+    -webkit-mask-size: 200% 200%;
+    transition: opacity 0.4s ease;
+    z-index: 0;
+}
+
+@keyframes mask-scroll {
+    0% {
+        mask-position: 0 0;
+        -webkit-mask-position: 0 0;
+    }
+
+    100% {
+        mask-position: -8.5rem 0;
+        -webkit-mask-position: -8.5rem 0;
+    }
+}
+
+.newsletter:hover .newsletter__bg {
+    opacity: 0;
+}
+
+.newsletter__content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 40rem;
+    margin: 0 auto;
+}
+
+.newsletter__title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-black);
+    text-transform: uppercase;
+}
+
+.newsletter__text {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: var(--color-black);
+    font-weight: bold;
+}
+
+.newsletter__form {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.newsletter__input {
+    padding: 1rem;
+    border: 0.25rem solid var(--color-black);
+    font-size: 1rem;
+    width: 20rem;
+    max-width: 100%;
+    background: var(--color-white);
+    font-weight: bold;
+}
+
+.newsletter__input:focus {
+    background: var(--color-black);
+    color: var(--color-neon);
+    outline: none;
+}
+
+.newsletter__submit {
+    padding: 1rem 2rem;
+    background: var(--color-black);
+    color: var(--color-neon);
+    border: 0.25rem solid var(--color-black);
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.newsletter__submit:hover {
+    background: var(--color-neon);
+    color: var(--color-black);
+    transform: scale(1.05);
+    box-shadow: 0.5rem 0.5rem 0 var(--color-pink);
+}
