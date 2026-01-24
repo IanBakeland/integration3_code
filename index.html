@@ -162,323 +162,325 @@
     </div>
   </section>
 
-  <main id="main-content" class="main-content"></main>
+  <main id="main-content" class="main-content">
 
+    <section id="pukpuk-universe" class="pp-universe">
 
-  <section id="pukpuk-universe" class="pp-universe">
+      <!-- CSS Stylistic Transition Edge -->
+      <div class="pp-universe__edge-top"></div>
 
-    <!-- CSS Stylistic Transition Edge -->
-    <div class="pp-universe__edge-top"></div>
+      <div class="pp-universe__content">
+        <!-- Background Elements -->
+        <div class="pp-universe__bg-noise"></div>
+        <div class="pp-universe__bg-gradient"></div>
+        <h2 class="pp-universe__giant-text font-brutal">PUK PUK<br>PUK PUK</h2>
 
-    <div class="pp-universe__content">
-      <!-- Background Elements -->
-      <div class="pp-universe__bg-noise"></div>
-      <div class="pp-universe__bg-gradient"></div>
-      <h2 class="pp-universe__giant-text font-brutal">PUK PUK<br>PUK PUK</h2>
-
-      <!-- Puk Puk Figure -->
-      <div class="pp-universe__figure">
-        <img src="src/assets/img/pukpuk.png" alt="Puk Puk" class="pp-universe__img" />
-      </div>
-
-      <!-- Content Cards (Floating) -->
-      <div class="pp-universe__cards">
-        <div class="pp-card pp-card--1">
-          <span class="pp-card__label font-mono">FIG. 01 — THE ALIEN</span>
-          <p class="pp-card__text font-brutal">I AM NOT<br>FROM HERE.</p>
+        <!-- Puk Puk Figure -->
+        <div class="pp-universe__figure">
+          <img src="src/assets/img/pukpuk.png" alt="Puk Puk" class="pp-universe__img" />
         </div>
 
-        <div class="pp-card pp-card--2">
-          <div class="pp-card__tag font-brutal">OUTSIDER</div>
-          <p class="pp-card__desc font-mono">
-            "Puk Puk is de eeuwige toeschouwer. De vreemdeling die ons observeert en vraagt: Waarom is alles zo
-            saai?"
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="mask" class="mask">
-
-    <!-- Background: The Reveal -->
-    <div id="mask-content" class="mask__content">
-      <div class="mask__bg-glow"></div>
-      <div class="mask__bg-texture"></div>
-
-      <div class="mask-reveal">
-        <div class="mask-reveal__label font-brutal">Identity Revealed</div>
-
-        <h3 class="mask-reveal__title font-brutal">
-          HET SOCIALE<br /><span class="text-stroke">HARNAS</span>
-        </h3>
-
-        <div class="mask-reveal__grid">
-          <div class="mask-reveal__text-left font-mono">
-            "Walter verbergt het gezicht om de sociale hiërarchie uit te wissen. Zonder gezicht vallen leeftijd,
-            afkomst en gender weg."
+        <!-- Content Cards (Floating) -->
+        <div class="pp-universe__cards">
+          <div class="pp-card pp-card--1">
+            <span class="pp-card__label font-mono">FIG. 01 — THE ALIEN</span>
+            <p class="pp-card__text font-brutal">I AM NOT<br>FROM HERE.</p>
           </div>
-          <div class="mask-reveal__text-right">
-            <p class="mask-reveal__subtitle font-brutal">PURE VRIJHEID</p>
-            <p class="mask-reveal__desc font-mono">
-              Voor de queer-community is dit radicale bevrijding: het masker geeft je de veiligheid om je ware,
-              innerlijke rebel eindelijk naar buiten te laten komen.
+
+          <div class="pp-card pp-card--2">
+            <div class="pp-card__tag font-brutal">OUTSIDER</div>
+            <p class="pp-card__desc font-mono">
+              "Puk Puk is de eeuwige toeschouwer. De vreemdeling die ons observeert en vraagt: Waarom is alles zo
+              saai?"
             </p>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Foreground: The Latex Mask -->
-    <div class="mask__foreground">
-      <!-- Left Mask Half -->
-      <div id="mask-left" class="mask__half mask__half--left">
-        <div class="mask__shine mask__shine--left"></div>
-        <div class="mask__tribal mask__tribal--pink"></div>
-        <div class="mask__eye mask__eye--left">
-          <div class="mask__eye-mesh"></div>
-          <div class="mask__eye-text font-brutal">SAFE</div>
-        </div>
-        <div class="zipper__teeth zipper__teeth--left"></div>
-      </div>
+    <section id="mask" class="mask">
 
-      <!-- Right Mask Half -->
-      <div id="mask-right" class="mask__half mask__half--right">
-        <div class="mask__shine mask__shine--right"></div>
-        <div class="mask__tribal mask__tribal--cyan"></div>
-        <div class="mask__eye mask__eye--right">
-          <div class="mask__eye-mesh"></div>
-          <div class="mask__eye-text font-brutal">SEX</div>
-        </div>
-        <div class="zipper__teeth zipper__teeth--right"></div>
-      </div>
+      <!-- Background: The Reveal -->
+      <div id="mask-content" class="mask__content">
+        <div class="mask__bg-glow"></div>
+        <div class="mask__bg-texture"></div>
 
-      <!-- Interactive Draggable Zipper -->
-      <div id="zipper-track" class="zipper">
-        <div id="zipper-pull" class="zipper__pull">
-          <!-- Slider Body -->
-          <div class="zipper__slider"></div>
-          <!-- Linkage Ring -->
-          <div class="zipper__ring"></div>
-          <!-- PukPuk Charm -->
-          <div class="zipper__charm">
-            <svg viewBox="0 0 200 200" class="pukpuk-svg pukpuk-zipper">
-              <defs>
-                <linearGradient id="silverGradientZipper" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#8c8c8c" />
-                  <stop offset="25%" stop-color="#e6e6e6" />
-                  <stop offset="50%" stop-color="#ffffff" />
-                  <stop offset="75%" stop-color="#8c8c8c" />
-                  <stop offset="100%" stop-color="#595959" />
-                </linearGradient>
-                <linearGradient id="goldGradientZipper" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#bf953f" />
-                  <stop offset="25%" stop-color="#fcf6ba" />
-                  <stop offset="50%" stop-color="#b38728" />
-                  <stop offset="75%" stop-color="#fbf5b7" />
-                  <stop offset="100%" stop-color="#aa771c" />
-                </linearGradient>
-                <filter id="bevelFilter">
-                  <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur" />
-                  <feSpecularLighting in="blur" surfaceScale="5" specularConstant="1" specularExponent="20"
-                    lighting-color="white" result="specOut">
-                    <fePointLight x="-5000" y="-10000" z="20000" />
-                  </feSpecularLighting>
-                  <feComposite in="specOut" in2="SourceAlpha" operator="in" result="specOut" />
-                  <feComposite in="SourceGraphic" in2="specOut" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"
-                    result="litPaint" />
-                </filter>
-              </defs>
-              <line x1="100" y1="50" x2="60" y2="20" stroke="#333" stroke-width="4" stroke-linecap="round" />
-              <circle cx="60" cy="20" r="10" fill="url(#goldGradientZipper)" stroke="#333" stroke-width="2" />
-              <line x1="100" y1="50" x2="140" y2="20" stroke="#333" stroke-width="4" stroke-linecap="round" />
-              <circle cx="140" cy="20" r="10" fill="url(#goldGradientZipper)" stroke="#333" stroke-width="2" />
-              <path d="M50 50 Q100 0 150 50 Q180 100 150 150 Q100 200 50 150 Q20 100 50 50"
-                fill="url(#silverGradientZipper)" stroke="#333" stroke-width="4" filter="url(#bevelFilter)" />
-              <g>
-                <ellipse cx="75" cy="90" rx="15" ry="25" fill="white" stroke="#333" stroke-width="3" />
-                <circle cx="75" cy="90" r="5" fill="black" />
-                <ellipse cx="125" cy="90" rx="15" ry="25" fill="white" stroke="#333" stroke-width="3" />
-                <circle cx="125" cy="90" r="5" fill="black" />
-              </g>
-              <path d="M80 140 Q100 160 120 140" fill="none" stroke="#333" stroke-width="5" stroke-linecap="round" />
-              <path d="M60 60 Q100 20 140 60" fill="none" stroke="white" stroke-width="2" opacity="0.8"
-                stroke-linecap="round" />
-            </svg>
+        <div class="mask-reveal">
+          <div class="mask-reveal__label font-brutal">Identity Revealed</div>
+
+          <h3 class="mask-reveal__title font-brutal">
+            HET SOCIALE<br /><span class="text-stroke">HARNAS</span>
+          </h3>
+
+          <div class="mask-reveal__grid">
+            <div class="mask-reveal__text-left font-mono">
+              "Walter verbergt het gezicht om de sociale hiërarchie uit te wissen. Zonder gezicht vallen leeftijd,
+              afkomst en gender weg."
+            </div>
+            <div class="mask-reveal__text-right">
+              <p class="mask-reveal__subtitle font-brutal">PURE VRIJHEID</p>
+              <p class="mask-reveal__desc font-mono">
+                Voor de queer-community is dit radicale bevrijding: het masker geeft je de veiligheid om je ware,
+                innerlijke rebel eindelijk naar buiten te laten komen.
+              </p>
+            </div>
           </div>
-          <!-- Label -->
-          <div class="zipper__label font-brutal">PULL TO REVEAL</div>
         </div>
+      </div>
+
+      <!-- Foreground: The Latex Mask -->
+      <div class="mask__foreground">
+        <!-- Left Mask Half -->
+        <div id="mask-left" class="mask__half mask__half--left">
+          <div class="mask__shine mask__shine--left"></div>
+          <div class="mask__tribal mask__tribal--pink"></div>
+          <div class="mask__eye mask__eye--left">
+            <div class="mask__eye-mesh"></div>
+            <div class="mask__eye-text font-brutal">SAFE</div>
+          </div>
+          <div class="zipper__teeth zipper__teeth--left"></div>
+        </div>
+
+        <!-- Right Mask Half -->
+        <div id="mask-right" class="mask__half mask__half--right">
+          <div class="mask__shine mask__shine--right"></div>
+          <div class="mask__tribal mask__tribal--cyan"></div>
+          <div class="mask__eye mask__eye--right">
+            <div class="mask__eye-mesh"></div>
+            <div class="mask__eye-text font-brutal">SEX</div>
+          </div>
+          <div class="zipper__teeth zipper__teeth--right"></div>
+        </div>
+
+        <!-- Interactive Draggable Zipper -->
+        <div id="zipper-track" class="zipper">
+          <div id="zipper-pull" class="zipper__pull">
+            <!-- Slider Body -->
+            <div class="zipper__slider"></div>
+            <!-- Linkage Ring -->
+            <div class="zipper__ring"></div>
+            <!-- PukPuk Charm -->
+            <div class="zipper__charm">
+              <svg viewBox="0 0 200 200" class="pukpuk-svg pukpuk-zipper">
+                <defs>
+                  <linearGradient id="silverGradientZipper" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#8c8c8c" />
+                    <stop offset="25%" stop-color="#e6e6e6" />
+                    <stop offset="50%" stop-color="#ffffff" />
+                    <stop offset="75%" stop-color="#8c8c8c" />
+                    <stop offset="100%" stop-color="#595959" />
+                  </linearGradient>
+                  <linearGradient id="goldGradientZipper" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#bf953f" />
+                    <stop offset="25%" stop-color="#fcf6ba" />
+                    <stop offset="50%" stop-color="#b38728" />
+                    <stop offset="75%" stop-color="#fbf5b7" />
+                    <stop offset="100%" stop-color="#aa771c" />
+                  </linearGradient>
+                  <filter id="bevelFilter">
+                    <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur" />
+                    <feSpecularLighting in="blur" surfaceScale="5" specularConstant="1" specularExponent="20"
+                      lighting-color="white" result="specOut">
+                      <fePointLight x="-5000" y="-10000" z="20000" />
+                    </feSpecularLighting>
+                    <feComposite in="specOut" in2="SourceAlpha" operator="in" result="specOut" />
+                    <feComposite in="SourceGraphic" in2="specOut" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"
+                      result="litPaint" />
+                  </filter>
+                </defs>
+                <line x1="100" y1="50" x2="60" y2="20" stroke="#333" stroke-width="4" stroke-linecap="round" />
+                <circle cx="60" cy="20" r="10" fill="url(#goldGradientZipper)" stroke="#333" stroke-width="2" />
+                <line x1="100" y1="50" x2="140" y2="20" stroke="#333" stroke-width="4" stroke-linecap="round" />
+                <circle cx="140" cy="20" r="10" fill="url(#goldGradientZipper)" stroke="#333" stroke-width="2" />
+                <path d="M50 50 Q100 0 150 50 Q180 100 150 150 Q100 200 50 150 Q20 100 50 50"
+                  fill="url(#silverGradientZipper)" stroke="#333" stroke-width="4" filter="url(#bevelFilter)" />
+                <g>
+                  <ellipse cx="75" cy="90" rx="15" ry="25" fill="white" stroke="#333" stroke-width="3" />
+                  <circle cx="75" cy="90" r="5" fill="black" />
+                  <ellipse cx="125" cy="90" rx="15" ry="25" fill="white" stroke="#333" stroke-width="3" />
+                  <circle cx="125" cy="90" r="5" fill="black" />
+                </g>
+                <path d="M80 140 Q100 160 120 140" fill="none" stroke="#333" stroke-width="5" stroke-linecap="round" />
+                <path d="M60 60 Q100 20 140 60" fill="none" stroke="white" stroke-width="2" opacity="0.8"
+                  stroke-linecap="round" />
+              </svg>
+            </div>
+            <!-- Label -->
+            <div class="zipper__label font-brutal">PULL TO REVEAL</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Instructions -->
+      <div id="mask-instructions" class="mask__instructions">
+        <span class="font-brutal">DRAG PUK PUK DOWN ↓</span>
+      </div>
+    </section>
+
+
+    <div id="bear" class="bear">
+      <div id="bear-container" class="bear__container">
+
+        <!-- Panel 1: Intro -->
+        <section class="bear__panel bear__panel--1">
+          <h2 class="bear__title-main font-brutal">THE</h2>
+          <h2 class="bear__title-stroke font-brutal">BEAR</h2>
+          <p class="bear__intro font-mono">Scroll horizontally to inflate the revolution.</p>
+        </section>
+
+        <!-- Panel 2: The Logic -->
+        <section class="bear__panel bear__panel--2">
+          <div class="bear__content-box">
+            <h3 class="bear__subtitle font-brutal">De Schoonheid van het 'Te Veel'</h3>
+            <p class="bear__text font-mono">
+              "Terwijl catwalks gedomineerd werden door graatmagere lichamen, koos Walter voor 'Bears'. Hij viert de
+              mannelijkheid in al haar vormen. Bij Walter is imperfectie de ultieme vorm van menselijke perfectie."
+            </p>
+          </div>
+        </section>
+
+        <!-- Panel 3: The Result -->
+        <section class="bear__panel bear__panel--3">
+          <h2 class="bear__power font-brutal">POWER</h2>
+        </section>
+
       </div>
     </div>
 
-    <!-- Instructions -->
-    <div id="mask-instructions" class="mask__instructions">
-      <span class="font-brutal">DRAG PUK PUK DOWN ↓</span>
-    </div>
-  </section>
+    <section id="activism" class="censored">
 
-
-  <div id="bear" class="bear">
-    <div id="bear-container" class="bear__container">
-
-      <!-- Panel 1: Intro -->
-      <section class="bear__panel bear__panel--1">
-        <h2 class="bear__title-main font-brutal">THE</h2>
-        <h2 class="bear__title-stroke font-brutal">BEAR</h2>
-        <p class="bear__intro font-mono">Scroll horizontally to inflate the revolution.</p>
-      </section>
-
-      <!-- Panel 2: The Logic -->
-      <section class="bear__panel bear__panel--2">
-        <div class="bear__content-box">
-          <h3 class="bear__subtitle font-brutal">De Schoonheid van het 'Te Veel'</h3>
-          <p class="bear__text font-mono">
-            "Terwijl catwalks gedomineerd werden door graatmagere lichamen, koos Walter voor 'Bears'. Hij viert de
-            mannelijkheid in al haar vormen. Bij Walter is imperfectie de ultieme vorm van menselijke perfectie."
-          </p>
-        </div>
-      </section>
-
-      <!-- Panel 3: The Result -->
-      <section class="bear__panel bear__panel--3">
-        <h2 class="bear__power font-brutal">POWER</h2>
-      </section>
-
-    </div>
-  </div>
-
-  <section id="activism" class="censored">
-
-    <div class="censored__container">
-      <h2 class="censored__title font-brutal">
-        ACTIVISM IS<br /><span class="text-pink">NOT A CRIME</span>
-      </h2>
-
-      <div class="censored__grid">
-        <div class="censored__text font-mono">
-          "Geen woorden, maar daden. In de jaren '90 schreeuwde hij 'SAFE SEX'. Vandaag vecht hij tegen uitsluiting
-          met slogans als 'KISS THE FUTURE'. Zijn mode is een visueel protest tegen uitsluiting en racisme."
-        </div>
-
-        <!-- Collection Photo 1 -->
-        <div class="censored__photo censored__photo--1">
-          <span class="censored__photo-label font-brutal">COLLECTION 1996</span>
-          <div class="censor-bar font-brutal">CENSORED</div>
-        </div>
-
-        <!-- Collection Photo 2 -->
-        <div class="censored__photo censored__photo--2">
-          <div class="censor-bar censor-bar--rotated font-brutal">EXPLICIT</div>
-        </div>
-
-        <!-- Collection Photo 3 -->
-        <div class="censored__photo censored__photo--3">
-          <div class="censored__photo-brand">W&amp;LT</div>
-          <div class="censor-bar censor-bar--1 font-brutal">TOO LOUD</div>
-          <div class="censor-bar censor-bar--2 font-brutal">TOO GAY</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Floating Slogans -->
-    <div class="censored__slogan font-brutal" style="top: 15%; left: 5%; transform: rotate(-20deg);">SAFE SEX</div>
-    <div class="censored__slogan font-brutal" style="top: 45%; left: 70%; transform: rotate(30deg);">KISS THE FUTURE
-    </div>
-    <div class="censored__slogan font-brutal" style="top: 75%; left: 20%; transform: rotate(-10deg);">STOP RACISM
-    </div>
-    <div class="censored__slogan font-brutal" style="top: 25%; left: 60%; transform: rotate(45deg);">BREAK TABOOS
-    </div>
-  </section>
-
-  <section class="museum">
-    <div class="museum__container">
-
-      <!-- Header -->
-      <div class="museum__header">
-        <h2 class="museum__title font-brutal">
-          <span class="museum__title-small">BELEEF HET ZELF</span>
-          <span class="museum__title-large">IN MOMU<br>ANTWERPEN</span>
+      <div class="censored__container">
+        <h2 class="censored__title font-brutal">
+          ACTIVISM IS<br /><span class="text-pink">NOT A CRIME</span>
         </h2>
-        <div class="museum__intro font-mono">
-          <p>Je hebt het verhaal gelezen, je hebt de energie gevoeld. Maar een beeldscherm kan nooit de impact van
-            een echte Walter overbrengen.</p>
+
+        <div class="censored__grid">
+          <div class="censored__text font-mono">
+            "Geen woorden, maar daden. In de jaren '90 schreeuwde hij 'SAFE SEX'. Vandaag vecht hij tegen uitsluiting
+            met slogans als 'KISS THE FUTURE'. Zijn mode is een visueel protest tegen uitsluiting en racisme."
+          </div>
+
+          <!-- Collection Photo 1 -->
+          <div class="censored__photo censored__photo--1">
+            <span class="censored__photo-label font-brutal">COLLECTION 1996</span>
+            <div class="censor-bar font-brutal">CENSORED</div>
+          </div>
+
+          <!-- Collection Photo 2 -->
+          <div class="censored__photo censored__photo--2">
+            <div class="censor-bar censor-bar--rotated font-brutal">EXPLICIT</div>
+          </div>
+
+          <!-- Collection Photo 3 -->
+          <div class="censored__photo censored__photo--3">
+            <div class="censored__photo-brand">W&amp;LT</div>
+            <div class="censor-bar censor-bar--1 font-brutal">TOO LOUD</div>
+            <div class="censor-bar censor-bar--2 font-brutal">TOO GAY</div>
+          </div>
         </div>
       </div>
 
-      <!-- Photo Gallery (Draggable) -->
-      <div class="museum__gallery-wrapper">
-        <div class="museum__gallery" id="museum-gallery">
-          <div class="museum-card">
-            <img src="src/assets/img/momu/style1.jpg" alt="Walter Van Beirendonck werk in MoMu" draggable="false" />
-            <div class="museum-card__overlay">
-              <span class="font-brutal">DE GEUR VAN LATEX</span>
-            </div>
-          </div>
-          <div class="museum-card">
-            <img src="src/assets/img/momu/style2.jpg" alt="Walter Van Beirendonck werk in MoMu" draggable="false" />
-            <div class="museum-card__overlay">
-              <span class="font-brutal">HET GEWICHT VAN EEN MASKER</span>
-            </div>
-          </div>
-          <div class="museum-card">
-            <img src="src/assets/img/momu/style3.jpg" alt="Walter Van Beirendonck werk in MoMu" draggable="false" />
-            <div class="museum-card__overlay">
-              <span class="font-brutal">BRUTE SCHAAL</span>
-            </div>
-          </div>
-          <div class="museum-card">
-            <img src="src/assets/img/momu/style4.jpg" alt="Walter Van Beirendonck werk in MoMu" draggable="false" />
-            <div class="museum-card__overlay">
-              <span class="font-brutal">LEVEND BEWIJS</span>
-            </div>
-          </div>
-          <div class="museum-card">
-            <img src="src/assets/img/momu/style5.jpg" alt="Walter Van Beirendonck werk in MoMu" draggable="false" />
-            <div class="museum-card__overlay">
-              <span class="font-brutal">DE REVOLUTIE</span>
-            </div>
-          </div>
-        </div>
-        <div class="museum__scroll-hint font-brutal">
-          <span>← Bekijk alle foto's →</span>
-        </div>
+      <!-- Floating Slogans -->
+      <div class="censored__slogan font-brutal" style="top: 15%; left: 5%; transform: rotate(-20deg);">SAFE SEX</div>
+      <div class="censored__slogan font-brutal" style="top: 45%; left: 70%; transform: rotate(30deg);">KISS THE FUTURE
       </div>
+      <div class="censored__slogan font-brutal" style="top: 75%; left: 20%; transform: rotate(-10deg);">STOP RACISM
+      </div>
+      <div class="censored__slogan font-brutal" style="top: 25%; left: 60%; transform: rotate(45deg);">BREAK TABOOS
+      </div>
+    </section>
 
-      <!-- Bottom Text + CTA -->
-      <div class="museum__footer">
-        <p class="museum__quote font-mono">
-          "Dit is geen geschiedenis; dit is levend bewijs van de revolutie. Kom kijken en laat je overrompelen."
+    <section class="museum">
+      <div class="museum__container">
+
+        <!-- Header -->
+        <div class="museum__header">
+          <h2 class="museum__title font-brutal">
+            <span class="museum__title-small">BELEEF HET ZELF</span>
+            <span class="museum__title-large">IN MOMU<br>ANTWERPEN</span>
+          </h2>
+          <div class="museum__intro font-mono">
+            <p>Je hebt het verhaal gelezen, je hebt de energie gevoeld. Maar een beeldscherm kan nooit de impact van
+              een echte Walter overbrengen.</p>
+          </div>
+        </div>
+
+        <!-- Photo Gallery (Draggable) -->
+        <div class="museum__gallery-wrapper">
+          <div class="museum__gallery" id="museum-gallery">
+            <div class="museum-card">
+              <img src="src/assets/img/momu/style1.jpg" alt="Walter Van Beirendonck werk in MoMu" draggable="false" />
+              <div class="museum-card__overlay">
+                <span class="font-brutal">DE GEUR VAN LATEX</span>
+              </div>
+            </div>
+            <div class="museum-card">
+              <img src="src/assets/img/momu/style2.jpg" alt="Walter Van Beirendonck werk in MoMu" draggable="false" />
+              <div class="museum-card__overlay">
+                <span class="font-brutal">HET GEWICHT VAN EEN MASKER</span>
+              </div>
+            </div>
+            <div class="museum-card">
+              <img src="src/assets/img/momu/style3.jpg" alt="Walter Van Beirendonck werk in MoMu" draggable="false" />
+              <div class="museum-card__overlay">
+                <span class="font-brutal">BRUTE SCHAAL</span>
+              </div>
+            </div>
+            <div class="museum-card">
+              <img src="src/assets/img/momu/style4.jpg" alt="Walter Van Beirendonck werk in MoMu" draggable="false" />
+              <div class="museum-card__overlay">
+                <span class="font-brutal">LEVEND BEWIJS</span>
+              </div>
+            </div>
+            <div class="museum-card">
+              <img src="src/assets/img/momu/style5.jpg" alt="Walter Van Beirendonck werk in MoMu" draggable="false" />
+              <div class="museum-card__overlay">
+                <span class="font-brutal">DE REVOLUTIE</span>
+              </div>
+            </div>
+          </div>
+          <div class="museum__scroll-hint font-brutal">
+            <span>← Bekijk alle foto's →</span>
+          </div>
+        </div>
+
+        <!-- Bottom Text + CTA -->
+        <div class="museum__footer">
+          <p class="museum__quote font-mono">
+            "Dit is geen geschiedenis; dit is levend bewijs van de revolutie. Kom kijken en laat je overrompelen."
+          </p>
+          <a href="#footer" class="museum__cta font-brutal">
+            BEZOEK MOMU →
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <!-- Scrolling Background -->
+      <div class="newsletter__bg"></div>
+
+      <!-- Content -->
+      <div class="newsletter__content">
+        <h2 class="newsletter__title font-brutal">SCHRIJF JE IN VOOR UPDATES</h2>
+        <p class="newsletter__text font-brutal">
+          Ontvang elke 2 maanden meldingen over nieuwe verhalen.
         </p>
-        <a href="#footer" class="museum__cta font-brutal">
-          BEZOEK MOMU →
-        </a>
+
+        <form class="newsletter__form" action="https://momu.us17.list-manage.com/subscribe" method="GET"
+          target="_blank">
+          <input type="hidden" name="u" value="d48a1a531d98b46f8ca8f4898">
+          <input type="hidden" name="id" value="e9733cc916">
+          <input type="hidden" name="LANGUAGE" value="Dutch">
+          <input type="email" name="EMAIL" placeholder="JE E-MAILADRES" class="newsletter__input font-brutal"
+            autocomplete="email" required />
+          <button type="submit" class="newsletter__submit font-brutal">INSCHRIJVEN</button>
+        </form>
       </div>
+    </section>
 
-    </div>
-  </section>
-
-  <section class="newsletter">
-    <!-- Scrolling Background -->
-    <div class="newsletter__bg"></div>
-
-    <!-- Content -->
-    <div class="newsletter__content">
-      <h2 class="newsletter__title font-brutal">SCHRIJF JE IN VOOR UPDATES</h2>
-      <p class="newsletter__text font-brutal">
-        Ontvang elke 2 maanden meldingen over nieuwe verhalen.
-      </p>
-
-      <form class="newsletter__form" action="https://momu.us17.list-manage.com/subscribe" method="GET" target="_blank">
-        <input type="hidden" name="u" value="d48a1a531d98b46f8ca8f4898">
-        <input type="hidden" name="id" value="e9733cc916">
-        <input type="hidden" name="LANGUAGE" value="Dutch">
-        <input type="email" name="EMAIL" placeholder="JE E-MAILADRES" class="newsletter__input font-brutal"
-          autocomplete="email" required />
-        <button type="submit" class="newsletter__submit font-brutal">INSCHRIJVEN</button>
-      </form>
-    </div>
-  </section>
+  </main>
 
   <footer id="footer" class="footer">
     <div class="footer__container">
