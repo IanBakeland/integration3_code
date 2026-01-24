@@ -1,0 +1,23 @@
+.censored {
+    min-height: 100vh;
+    width: 100%;
+    background: var(--color-white);
+    position: relative;
+    overflow: hidden;
+    padding: 5rem 0;
+    border-top: 0.5rem solid var(--color-black);
+}
+
+.censored__container {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+    z-index: 10;
+    position: relative;
+}
+
+.censored__title {
+    font-size: 3.75rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
