@@ -39,3 +39,51 @@
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+.censored__text {
+    font-size: 1.25rem;
+    border: 0.25rem solid var(--color-black);
+    padding: 1.5rem;
+    background: var(--color-gray-light);
+}
+
+.censored__photo {
+    position: relative;
+    height: 24rem;
+    border: 0.25rem solid var(--color-black);
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(100%);
+    transition: filter 0.5s;
+}
+
+.censored__photo:hover {
+    filter: grayscale(0%);
+}
+
+.censor-bar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--color-black);
+    color: var(--color-white);
+    font-size: 3rem;
+    padding: 0.5rem 2rem;
+    cursor: grab;
+    user-select: none;
+    z-index: 10;
+}
+
+.censor-bar:hover {
+    background-color: #dc2626;
+}
+
+.censored__slogan {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0.1;
+    font-size: 6rem;
+    white-space: nowrap;
+    z-index: 0;
+}
