@@ -1,9 +1,7 @@
-/**
- * Hero Section Module
- * Handles PukPuk charging animation and explosion reveal
- */
-
 import gsap from 'gsap';
+
+// Check for reduced motion preference
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 export function initHero(onUnlock) {
     let isCharging = false;
@@ -42,16 +40,25 @@ export function initHero(onUnlock) {
 
         const tl = gsap.timeline();
 
-        tl.to(pukpukContainer, {
-            scale: 15,
-            opacity: 0,
-            duration: 0.8,
-            ease: 'power4.in'
+        // Reduced motion: skip scale animation, just fade out
+        if (prefersReducedMotion) {
+            tl.to(pukpukContainer, {
+                opacity: 0,
+                duration: 0.01
+            });
+        } else {
+            tl.to(pukpukContainer, {
+                scale: 15,
+                opacity: 0,
+                duration: 0.8,
+                ease: 'power4.in'
+            });
+        }
+
+        tl.to(heroSection, {
+            backgroundColor: '#ff0099',
+            duration: 0.1
         })
-            .to(heroSection, {
-                backgroundColor: '#ff0099',
-                duration: 0.1
-            })
             .to(heroBg, { opacity: 0, duration: 0.1 }, '<')
             .set(heroSection, { backgroundColor: '#eaddcf' })
             .to(heroContent, {
@@ -59,26 +66,26 @@ export function initHero(onUnlock) {
                 duration: 0.1
             })
             .from('.hero__image', {
-                scale: 1.2,
-                y: 100,
+                scale: prefersReducedMotion ? 1 : 1.2,
+                y: prefersReducedMotion ? 0 : 100,
                 opacity: 0,
-                duration: 1.2,
+                duration: prefersReducedMotion ? 0.01 : 1.2,
                 ease: 'power3.out'
             }, '-=1.2')
             .from('.hero__text--back', {
-                x: -100,
+                x: prefersReducedMotion ? 0 : -100,
                 opacity: 0,
-                duration: 1
+                duration: prefersReducedMotion ? 0.01 : 1
             }, '-=1')
             .from('.hero__text--front', {
-                x: 100,
+                x: prefersReducedMotion ? 0 : 100,
                 opacity: 0,
-                duration: 1
+                duration: prefersReducedMotion ? 0.01 : 1
             }, '-=0.8')
             .from('.garment-tag', {
-                x: 200,
-                rotation: 90,
-                duration: 0.8,
+                x: prefersReducedMotion ? 0 : 200,
+                rotation: prefersReducedMotion ? 0 : 90,
+                duration: prefersReducedMotion ? 0.01 : 0.8,
                 ease: 'power2.out'
             }, '-=0.5')
             .call(() => {
@@ -111,8 +118,11 @@ export function initHero(onUnlock) {
 
         if (isCharging && !isExploded) {
             const intensity = chargeProgress / 100;
+            // Keep color effect, skip motion/shake when reduced motion is preferred
             heroBg.style.filter = `hue-rotate(${chargeProgress * 4}deg) blur(${intensity * 2}px)`;
-            heroBg.style.transform = `scale(${1 + intensity * 0.15}) rotate(${Math.sin(chargeProgress * 0.2) * 3}deg) skewX(${Math.cos(chargeProgress * 0.1) * 2}deg)`;
+            if (!prefersReducedMotion) {
+                heroBg.style.transform = `scale(${1 + intensity * 0.15}) rotate(${Math.sin(chargeProgress * 0.2) * 3}deg) skewX(${Math.cos(chargeProgress * 0.1) * 2}deg)`;
+            }
         } else if (!isExploded) {
             heroBg.style.transition = 'all 0.5s ease-out';
             heroBg.style.filter = 'none';

@@ -100,3 +100,9 @@
     transform: scale(1.05);
     box-shadow: 0.5rem 0.5rem 0 var(--color-pink);
 }
+
+@media (prefers-reduced-motion: reduce) {
+    .newsletter__bg {
+        animation: none;
+    }
+}
