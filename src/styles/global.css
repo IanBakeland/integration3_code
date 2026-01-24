@@ -1,12 +1,20 @@
+/* ============================================ */
+/* CSS IMPORTS - Components */
+/* ============================================ */
+
 @import './components/hero.css';
-@import './components/navigation.css';
 @import './components/pukpuk.css';
 @import './components/mask.css';
 @import './components/bear.css';
 @import './components/censored.css';
+@import './components/navigation.css';
 @import './components/museum-visit.css';
 @import './components/newsletter.css';
 @import './components/footer.css';
+
+/* ============================================ */
+/* CSS VARIABLES */
+/* ============================================ */
 
 :root {
   --color-black: #000000;
@@ -20,6 +28,39 @@
   --color-yellow: #ffff00;
   --color-paper: #eaddcf;
 }
+
+/* ============================================ */
+/* RESET */
+/* ============================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================================ */
+/* SCROLLBAR */
+/* ============================================ */
+
+::-webkit-scrollbar {
+  width: 0.75rem;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-neon);
+  border: 0.125rem solid var(--color-black);
+}
+
+/* ============================================ */
+/* BASE STYLES */
+/* ============================================ */
 
 html {
   scroll-behavior: smooth;
@@ -37,6 +78,10 @@ body.locked {
   overflow-y: hidden;
 }
 
+/* ============================================ */
+/* TYPOGRAPHY */
+/* ============================================ */
+
 .font-brutal {
   font-family: 'Arial Black', 'Impact', sans-serif;
   letter-spacing: -0.05em;
@@ -47,28 +92,9 @@ body.locked {
   font-weight: bold;
 }
 
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-::-webkit-scrollbar {
-  width: 0.75rem;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--color-black);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--color-neon);
-  border: 0.125rem solid var(--color-black);
-}
+/* ============================================ */
+/* UTILITY CLASSES */
+/* ============================================ */
 
 .hidden {
   display: none !important;
@@ -82,6 +108,10 @@ body.locked {
 .text-pink {
   color: var(--color-pink);
 }
+
+/* ============================================ */
+/* ANIMATIONS */
+/* ============================================ */
 
 @keyframes pulse {
 
@@ -141,5 +171,15 @@ body.locked {
 
   95% {
     transform: scaleY(0.1);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
   }
 }
