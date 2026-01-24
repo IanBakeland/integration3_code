@@ -430,3 +430,14 @@
 .mask__instructions.hidden {
     opacity: 0;
 }
+
+/* Reduced Motion - Stop animations */
+@media (prefers-reduced-motion: reduce) {
+    .mask__bg-glow {
+        animation: none;
+    }
+
+    .mask__instructions span {
+        animation: none;
+    }
+}

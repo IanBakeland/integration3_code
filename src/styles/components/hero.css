@@ -376,3 +376,22 @@
     animation: bounce 1s infinite;
     color: var(--color-black);
 }
+
+/* Reduced Motion - Stop animations */
+@media (prefers-reduced-motion: reduce) {
+    .hero__bg-text-row {
+        animation: none;
+    }
+
+    .pukpuk__glow {
+        animation: none;
+    }
+
+    .hero__shape--1 {
+        animation: none;
+    }
+
+    .scroll-hint-text {
+        animation: none;
+    }
+}

@@ -176,3 +176,10 @@
     pointer-events: none;
     -webkit-user-drag: none;
 }
+
+/* Reduced Motion - Stop animations */
+@media (prefers-reduced-motion: reduce) {
+    .museum__scroll-hint {
+        animation: none;
+    }
+}
