@@ -77,3 +77,40 @@
     backdrop-filter: blur(0.25rem);
     transform: rotate(-2deg);
 }
+
+@media (max-width: 768px) {
+    .bear__content-box {
+        width: 90%;
+    }
+}
+
+.bear__subtitle {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-cyan);
+}
+
+.bear__text {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--color-white);
+}
+
+.bear__panel--3 {
+    background-color: var(--color-cyan);
+    position: relative;
+}
+
+.bear__power {
+    position: absolute;
+    z-index: 0;
+    opacity: 0.2;
+    color: var(--color-black);
+    font-size: 8rem;
+}
+
+@media (min-width: 768px) {
+    .bear__power {
+        font-size: 12rem;
+    }
+}
