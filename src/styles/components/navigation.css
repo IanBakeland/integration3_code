@@ -4,7 +4,6 @@
     left: 50%;
     transform: translateX(-50%) translateY(0);
     width: 95%;
-    max-width: 90rem;
     z-index: 1000;
     display: flex;
     justify-content: space-between;
@@ -113,7 +112,7 @@
 }
 
 /* Mobile Navigation */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .navbar {
         top: 1rem;
         width: calc(100% - 2rem);
@@ -208,5 +207,12 @@
 
     .navbar__link--tickets {
         display: none;
+    }
+}
+
+/* Desktop Navigation */
+@media (min-width: 768px) {
+    .navbar {
+        max-width: 90rem;
     }
 }
