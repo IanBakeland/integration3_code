@@ -1,24 +1,36 @@
+/* ===========================================
+   NAVIGATION - Mobile First
+   =========================================== */
+
 .navbar {
     position: fixed;
-    top: 1.5rem;
+    top: var(--space-4);
     left: 50%;
-    transform: translateX(-50%) translateY(0);
-    width: 95%;
-    max-width: 90rem;
-    z-index: 1000;
+    transform: translateX(-50%) translateY(-200%);
+    width: calc(100% - var(--space-8));
+    z-index: var(--z-navbar);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(1rem);
-    -webkit-backdrop-filter: blur(1rem);
-    border: 0.125rem solid var(--color-black);
-    padding: 0.5rem 0.5rem 0.5rem 1.5rem;
-    clip-path: polygon(1rem 0, 100% 0, 100% calc(100% - 1rem), calc(100% - 1rem) 100%, 0 100%, 0 1rem);
+    padding: var(--space-3) var(--space-4);
+    clip-path: none;
+    background: transparent;
+    border: none;
+    backdrop-filter: none;
     opacity: 0;
     pointer-events: none;
-    transform: translateX(-50%) translateY(-200%);
-    transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: all var(--transition-smooth);
+}
+
+.navbar::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(243, 243, 243, 0.6);
+    backdrop-filter: blur(10px);
+    border: var(--radius-sm) solid var(--color-black);
+    clip-path: polygon(var(--space-4) 0, 100% 0, 100% calc(100% - var(--space-4)), calc(100% - var(--space-4)) 100%, 0 100%, 0 var(--space-4));
+    z-index: -1;
 }
 
 .navbar.visible {
@@ -37,9 +49,9 @@
 }
 
 .navbar__logo-img {
-    height: 3.5rem;
+    height: var(--space-8);
     width: auto;
-    transition: opacity 0.2s ease;
+    transition: opacity var(--transition-fast);
 }
 
 .navbar__logo-img--default {
@@ -62,24 +74,40 @@
     opacity: 1;
 }
 
+/* Mobile Menu (dropdown) */
 .navbar__menu {
+    position: fixed;
+    top: 5rem;
+    left: var(--space-4);
+    right: var(--space-4);
     display: flex;
-    align-items: center;
-    gap: 0.25rem;
+    flex-direction: column;
+    gap: var(--space-3);
     background: var(--color-black);
-    padding: 0.25rem;
-    border-radius: 0.25rem;
-    clip-path: polygon(1rem 0, 100% 0, 100% 100%, 0 100%);
+    padding: var(--space-6);
+    border-radius: var(--radius-base);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(var(--space-8));
+    transition: all var(--transition-base);
+}
+
+.navbar__menu.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
 .navbar__link {
     text-decoration: none;
     color: var(--color-white);
-    font-family: 'Arial Black', 'Impact', sans-serif;
-    font-size: 0.875rem;
-    padding: 0.75rem 1.5rem;
+    font-family: var(--font-brutal);
+    font-size: var(--font-size-base);
+    padding: var(--space-4) var(--space-6);
     text-transform: uppercase;
-    transition: all 0.2s;
+    text-align: center;
+    width: 100%;
+    transition: all var(--transition-fast);
 }
 
 .navbar__link:hover {
@@ -97,116 +125,113 @@
     color: var(--color-white);
 }
 
-.navbar__toggle {
+.navbar__link--tickets {
     display: none;
 }
 
+/* Mobile Hamburger Toggle */
+.navbar__toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    width: var(--space-10);
+    height: var(--space-10);
+    background: var(--color-black);
+    border: none;
+    cursor: pointer;
+    padding: var(--space-2);
+    order: 3;
+}
+
+.navbar__toggle-line {
+    width: 100%;
+    height: 0.2rem;
+    background: var(--color-neon);
+    transition: all var(--transition-base) cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.navbar__toggle.open .navbar__toggle-line:nth-child(1) {
+    transform: translateY(0.55rem) rotate(45deg);
+}
+
+.navbar__toggle.open .navbar__toggle-line:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar__toggle.open .navbar__toggle-line:nth-child(3) {
+    transform: translateY(-0.55rem) rotate(-45deg);
+}
+
+/* Mobile Tickets Button (visible on mobile) */
 .navbar__tickets-btn {
-    display: none;
+    display: block;
+    order: 2;
+    margin-left: auto;
+    margin-right: var(--space-3);
     background: var(--color-neon);
     color: var(--color-black);
     text-decoration: none;
-    font-size: 0.75rem;
-    padding: 0.5rem 1rem;
+    font-size: var(--font-size-xs);
+    padding: var(--space-2) var(--space-4);
     font-weight: bold;
     text-transform: uppercase;
 }
 
-/* Mobile Navigation */
-@media (max-width: 768px) {
+/* ===========================================
+   DESKTOP NAVIGATION
+   =========================================== */
+@media (min-width: 48em) {
     .navbar {
-        top: 1rem;
-        width: calc(100% - 2rem);
-        padding: 0.75rem 1rem;
-        clip-path: none;
-        background: transparent;
-        border: none;
-        backdrop-filter: none;
+        top: var(--space-6);
+        width: 95%;
+        max-width: 90rem;
+        padding: var(--space-2) var(--space-2) var(--space-2) var(--space-6);
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(var(--space-4));
+        -webkit-backdrop-filter: blur(var(--space-4));
+        border: var(--radius-sm) solid var(--color-black);
+        clip-path: polygon(var(--space-4) 0, 100% 0, 100% calc(100% - var(--space-4)), calc(100% - var(--space-4)) 100%, 0 100%, 0 var(--space-4));
     }
 
     .navbar::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: rgba(243, 243, 243, 0.6);
-        backdrop-filter: blur(10px);
-        border: 0.125rem solid var(--color-black);
-        clip-path: polygon(1rem 0, 100% 0, 100% calc(100% - 1rem), calc(100% - 1rem) 100%, 0 100%, 0 1rem);
-        z-index: -1;
+        display: none;
     }
 
     .navbar__logo-img {
-        height: 2rem;
+        height: 3.5rem;
     }
 
-    .navbar__tickets-btn {
-        display: block;
-        order: 2;
-        margin-left: auto;
-        margin-right: 0.75rem;
-    }
-
-    .navbar__toggle {
-        display: flex;
-        flex-direction: column;
-        gap: 0.35rem;
-        width: 2.5rem;
-        height: 2.5rem;
-        background: var(--color-black);
-        border: none;
-        cursor: pointer;
-        padding: 0.5rem;
-        order: 3;
-    }
-
-    .navbar__toggle-line {
-        width: 100%;
-        height: 0.2rem;
-        background: var(--color-neon);
-        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    }
-
-    .navbar__toggle.open .navbar__toggle-line:nth-child(1) {
-        transform: translateY(0.55rem) rotate(45deg);
-    }
-
-    .navbar__toggle.open .navbar__toggle-line:nth-child(2) {
-        opacity: 0;
-    }
-
-    .navbar__toggle.open .navbar__toggle-line:nth-child(3) {
-        transform: translateY(-0.55rem) rotate(-45deg);
-    }
-
+    /* Desktop Menu (inline) */
     .navbar__menu {
-        position: fixed;
-        top: 5rem;
-        left: 1rem;
-        right: 1rem;
-        background: var(--color-black);
-        padding: 1.5rem;
-        flex-direction: column;
-        gap: 0.75rem;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(2rem);
-        transition: all 0.3s;
-    }
-
-    .navbar__menu.open {
+        position: static;
+        flex-direction: row;
+        gap: var(--space-1);
+        padding: var(--space-1);
         opacity: 1;
         visibility: visible;
-        transform: translateY(0);
+        transform: none;
+        clip-path: polygon(var(--space-4) 0, 100% 0, 100% 100%, 0 100%);
     }
 
     .navbar__link {
-        padding: 1rem 1.5rem;
-        font-size: 1rem;
-        text-align: center;
-        width: 100%;
+        font-size: var(--font-size-sm);
+        padding: var(--space-3) var(--space-6);
+        text-align: left;
+        width: auto;
     }
 
-    .navbar__link--tickets {
+    /* Hide hamburger on desktop */
+    .navbar__toggle {
         display: none;
+    }
+
+    /* Hide mobile tickets button on desktop */
+    .navbar__tickets-btn {
+        display: none;
+    }
+
+    /* Show tickets link in menu on desktop */
+    .navbar__link--tickets {
+        display: block;
     }
 }

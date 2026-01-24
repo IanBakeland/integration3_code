@@ -19,12 +19,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 2.5rem;
+    padding: var(--space-10);
 }
 
 .bear__panel--1 {
     background-color: var(--color-gray-dark);
-    border-right: 0.5rem solid var(--color-neon);
+    border-right: var(--space-2) solid var(--color-neon);
 }
 
 .bear__title-main {
@@ -33,7 +33,7 @@
     line-height: 1;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 48em) {
     .bear__title-main {
         font-size: 12rem;
     }
@@ -41,27 +41,27 @@
 
 .bear__title-stroke {
     font-size: 6rem;
-    -webkit-text-stroke: 0.125rem var(--color-white);
+    -webkit-text-stroke: var(--radius-sm) var(--color-white);
     color: transparent;
     line-height: 1;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 48em) {
     .bear__title-stroke {
         font-size: 12rem;
     }
 }
 
 .bear__intro {
-    margin-top: 2.5rem;
-    font-size: 1.25rem;
+    margin-top: var(--space-10);
+    font-size: var(--font-size-xl);
     max-width: 32rem;
     text-align: center;
 }
 
 .bear__panel--2 {
     background-color: var(--color-pink);
-    border-right: 0.5rem solid var(--color-white);
+    border-right: var(--space-2) solid var(--color-white);
     position: relative;
     overflow: hidden;
     flex-direction: row;
@@ -69,29 +69,29 @@
 }
 
 .bear__content-box {
-    width: 50%;
+    width: 90%;
     z-index: 10;
-    padding: 2rem;
+    padding: var(--space-8);
     background: rgba(0, 0, 0, 0.8);
-    border: 0.25rem solid var(--color-white);
-    backdrop-filter: blur(0.25rem);
+    border: var(--radius-base) solid var(--color-white);
+    backdrop-filter: blur(var(--radius-base));
     transform: rotate(-2deg);
 }
 
-@media (max-width: 768px) {
+@media (min-width: 48em) {
     .bear__content-box {
-        width: 90%;
+        width: 50%;
     }
 }
 
 .bear__subtitle {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    font-size: var(--font-size-4xl);
+    margin-bottom: var(--space-4);
     color: var(--color-cyan);
 }
 
 .bear__text {
-    font-size: 1.125rem;
+    font-size: var(--font-size-lg);
     line-height: 1.6;
     color: var(--color-white);
 }
@@ -109,7 +109,7 @@
     font-size: 8rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 48em) {
     .bear__power {
         font-size: 12rem;
     }

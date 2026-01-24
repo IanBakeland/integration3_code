@@ -37,7 +37,7 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    padding: 6rem 1rem;
+    padding: 6rem var(--space-4);
 }
 
 .pp-universe__bg-gradient {
@@ -70,15 +70,24 @@
     transform: rotate(-15deg);
 }
 
-/* Puk Puk Figure */
+/* Puk Puk Figure - Mobile First */
 .pp-universe__figure {
     position: relative;
     z-index: 5;
-    width: 40vw;
-    height: 40vw;
+    width: 70vw;
+    height: 70vw;
+    margin-top: -20%;
     max-width: 30rem;
     max-height: 30rem;
-    filter: drop-shadow(1rem 1rem 0 rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(var(--space-4) var(--space-4) 0 rgba(0, 0, 0, 0.5));
+}
+
+@media (min-width: 48em) {
+    .pp-universe__figure {
+        width: 40vw;
+        height: 40vw;
+        margin-top: 0;
+    }
 }
 
 .pp-universe__img {
@@ -99,12 +108,12 @@
 .pp-card {
     position: absolute;
     background: var(--color-white);
-    border: 0.25rem solid var(--color-black);
-    padding: 1.5rem;
-    box-shadow: 0.5rem 0.5rem 0 var(--color-black);
+    border: var(--radius-base) solid var(--color-black);
+    padding: var(--space-6);
+    box-shadow: var(--space-2) var(--space-2) 0 var(--color-black);
     max-width: 20rem;
     pointer-events: auto;
-    transition: transform 0.2s;
+    transition: transform var(--transition-fast);
 }
 
 .pp-card:hover {
@@ -112,30 +121,62 @@
     z-index: 20;
 }
 
+/* Card 1 - Mobile First */
 .pp-card--1 {
-    top: 20%;
-    left: 10%;
-    transform: rotate(-5deg);
+    top: 10%;
+    left: 5%;
+    transform: rotate(-2deg);
+    max-width: 15rem;
 }
 
+@media (min-width: 48em) {
+    .pp-card--1 {
+        top: 20%;
+        left: 10%;
+        transform: rotate(-5deg);
+        max-width: 20rem;
+    }
+}
+
+/* Card 2 - Mobile First */
 .pp-card--2 {
-    bottom: 20%;
-    right: 10%;
+    bottom: 10%;
+    right: 5%;
     transform: rotate(3deg);
-    max-width: 25rem;
+    max-width: 18rem;
+}
+
+@media (min-width: 48em) {
+    .pp-card--2 {
+        bottom: 20%;
+        right: 10%;
+        max-width: 25rem;
+    }
+}
+
+/* Card Text - Mobile First */
+.pp-card__text {
+    font-size: var(--font-size-2xl);
+    line-height: 1;
+}
+
+@media (min-width: 48em) {
+    .pp-card__text {
+        font-size: var(--font-size-4xl);
+    }
 }
 
 .pp-card__label {
     display: block;
-    font-size: 0.875rem;
-    border-bottom: 0.125rem solid var(--color-black);
-    padding-bottom: 0.5rem;
-    margin-bottom: 0.5rem;
+    font-size: var(--font-size-sm);
+    border-bottom: var(--radius-sm) solid var(--color-black);
+    padding-bottom: var(--space-2);
+    margin-bottom: var(--space-2);
     color: var(--color-gray-dark);
 }
 
 .pp-card__text {
-    font-size: 2.5rem;
+    font-size: var(--font-size-4xl);
     line-height: 1;
 }
 
@@ -143,14 +184,14 @@
     background: var(--color-black);
     color: var(--color-neon);
     display: inline-block;
-    padding: 0.25rem 0.5rem;
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
+    padding: var(--space-1) var(--space-2);
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-2);
     transform: skewX(-10deg);
 }
 
 .pp-card__desc {
-    font-size: 1rem;
+    font-size: var(--font-size-base);
     line-height: 1.4;
 }
 
@@ -341,33 +382,7 @@
     border-bottom: 0.25rem solid var(--color-black);
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-    .pp-universe__figure {
-        width: 70vw;
-        height: 70vw;
-        margin-top: -20%;
-    }
-
-    .pp-card--1 {
-        top: 10%;
-        left: 5%;
-        transform: rotate(-2deg);
-        max-width: 15rem;
-    }
-
-    .pp-card--2 {
-        bottom: 10%;
-        right: 5%;
-        max-width: 18rem;
-    }
-
-    .pp-card__text {
-        font-size: 1.5rem;
-    }
-}
-
-@media (min-width: 768px) {
+@media (min-width: 48em) {
     .comic-dialogue {
         padding: 3rem;
         padding-bottom: 1.5rem;
@@ -447,7 +462,7 @@
     }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 64em) {
     .comic-dialogue {
         padding-right: 6rem;
     }

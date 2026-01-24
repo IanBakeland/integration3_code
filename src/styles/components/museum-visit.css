@@ -8,7 +8,7 @@
 
 .museum__container {
     position: relative;
-    z-index: 1;
+    z-index: var(--z-base);
     max-width: 90rem;
     margin: 0 auto;
 }
@@ -16,12 +16,12 @@
 .museum__header {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    padding: 0 2rem;
-    margin-bottom: 4rem;
+    gap: var(--space-8);
+    padding: 0 var(--space-8);
+    margin-bottom: var(--space-16);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 48em) {
     .museum__header {
         flex-direction: row;
         justify-content: space-between;
@@ -36,10 +36,10 @@
 
 .museum__title-small {
     display: block;
-    font-size: 1rem;
+    font-size: var(--font-size-base);
     color: var(--color-neon);
     letter-spacing: 0.2em;
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--space-2);
 }
 
 .museum__title-large {
@@ -50,19 +50,19 @@
 .museum__intro {
     max-width: 30rem;
     color: var(--color-gray);
-    font-size: 1.1rem;
+    font-size: var(--font-size-lg);
     line-height: 1.6;
 }
 
 .museum__gallery-wrapper {
     position: relative;
-    margin-bottom: 4rem;
+    margin-bottom: var(--space-16);
 }
 
 .museum__gallery {
     display: flex;
-    gap: 1.5rem;
-    padding: 0 2rem;
+    gap: var(--space-6);
+    padding: 0 var(--space-8);
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     cursor: grab;
@@ -85,11 +85,11 @@
     position: relative;
     scroll-snap-align: center;
     overflow: hidden;
-    border: 0.25rem solid var(--color-white);
+    border: var(--radius-base) solid var(--color-white);
     transition: all 0.4s;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 48em) {
     .museum-card {
         width: 22rem;
     }
@@ -99,7 +99,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.6s;
+    transition: transform var(--transition-slow);
 }
 
 .museum-card:hover img {
@@ -111,7 +111,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 2rem 1.5rem;
+    padding: var(--space-8) var(--space-6);
     background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
     transform: translateY(100%);
     transition: transform 0.4s;
@@ -123,14 +123,14 @@
 
 .museum-card__overlay span {
     color: var(--color-neon);
-    font-size: 1.25rem;
+    font-size: var(--font-size-xl);
 }
 
 .museum__scroll-hint {
     text-align: center;
     color: var(--color-gray);
-    font-size: 0.875rem;
-    margin-top: 1.5rem;
+    font-size: var(--font-size-sm);
+    margin-top: var(--space-6);
     animation: pulse 2s infinite;
 }
 
@@ -139,15 +139,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
-    padding: 0 2rem;
+    gap: var(--space-8);
+    padding: 0 var(--space-8);
     text-align: center;
 }
 
 .museum__quote {
     max-width: 40rem;
     color: var(--color-white);
-    font-size: 1.25rem;
+    font-size: var(--font-size-xl);
     font-style: italic;
 }
 
@@ -156,12 +156,12 @@
     background: var(--color-neon);
     color: var(--color-black);
     text-decoration: none;
-    font-size: 1.5rem;
-    padding: 1.25rem 3rem;
-    border: 0.25rem solid var(--color-white);
-    transition: all 0.3s;
+    font-size: var(--font-size-2xl);
+    padding: var(--space-5) var(--space-12);
+    border: var(--radius-base) solid var(--color-white);
+    transition: all var(--transition-base);
     transform: rotate(-1deg);
-    box-shadow: 0.5rem 0.5rem 0 var(--color-pink);
+    box-shadow: var(--space-2) var(--space-2) 0 var(--color-pink);
 }
 
 .museum__cta:hover {
