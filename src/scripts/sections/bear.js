@@ -3,7 +3,7 @@ export function initBearSection() {
     const panels = gsap.utils.toArray('.bear__panel');
 
     gsap.to(panels, {
-        xPercent: -100 * (panels.length - 1),
+        xPercent: -10 * (panels.length - 1),
         ease: 'none',
         scrollTrigger: {
             trigger: bearContainer,
