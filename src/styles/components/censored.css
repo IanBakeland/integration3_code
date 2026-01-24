@@ -21,3 +21,21 @@
     margin-bottom: 3rem;
     text-align: center;
 }
+
+@media (min-width: 768px) {
+    .censored__title {
+        font-size: 6rem;
+    }
+}
+
+.censored__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+}
+
+@media (min-width: 768px) {
+    .censored__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
