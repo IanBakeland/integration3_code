@@ -6,6 +6,7 @@
 @import './components/censored.css';
 @import './components/museum-visit.css';
 @import './components/newsletter.css';
+@import './components/footer.css';
 
 :root {
   --color-black: #000000;
