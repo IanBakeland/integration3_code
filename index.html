@@ -245,120 +245,37 @@
 
     <section id="mask" class="mask">
 
-      <!-- Background: The Reveal -->
+      <!-- Content (Behind) -->
       <div id="mask-content" class="mask__content">
-        <div class="mask__bg-glow"></div>
-        <div class="mask__bg-texture"></div>
-
         <div class="mask-reveal">
-          <div class="mask-reveal__label font-brutal">Identity Revealed</div>
-
           <h3 class="mask-reveal__title font-brutal">
-            HET SOCIALE<br /><span class="text-stroke">HARNAS</span>
+            HET SOCIALE<br><span class="text-stroke">HARNAS</span>
           </h3>
-
-          <div class="mask-reveal__grid">
-            <div class="mask-reveal__text-left font-mono">
-              "Walter verbergt het gezicht om de sociale hiërarchie uit te wissen. Zonder gezicht vallen leeftijd,
-              afkomst en gender weg."
-            </div>
-            <div class="mask-reveal__text-right">
-              <p class="mask-reveal__subtitle font-brutal">PURE VRIJHEID</p>
-              <p class="mask-reveal__desc font-mono">
-                Voor de queer-community is dit radicale bevrijding: het masker geeft je de veiligheid om je ware,
-                innerlijke rebel eindelijk naar buiten te laten komen.
-              </p>
-            </div>
-          </div>
+          <p class="mask-reveal__quote font-mono">
+            "Walter verbergt het gezicht om de sociale hiërarchie uit te wissen.
+            Zonder gezicht vallen leeftijd, afkomst en gender weg."
+          </p>
+          <p class="mask-reveal__subtitle font-brutal">PURE VRIJHEID</p>
+          <p class="mask-reveal__desc font-mono">
+            Voor de queer-community is dit radicale bevrijding: het masker geeft je
+            de veiligheid om je ware, innerlijke rebel naar buiten te laten komen.
+          </p>
         </div>
       </div>
 
-      <!-- Foreground: The Latex Mask -->
+      <!-- Foreground: Zipper Image (Splits) -->
       <div class="mask__foreground">
-        <!-- Left Mask Half -->
         <div id="mask-left" class="mask__half mask__half--left">
-          <div class="mask__shine mask__shine--left"></div>
-          <div class="mask__tribal mask__tribal--pink"></div>
-          <div class="mask__eye mask__eye--left">
-            <div class="mask__eye-mesh"></div>
-            <div class="mask__eye-text font-brutal">SAFE</div>
-          </div>
-          <div class="zipper__teeth zipper__teeth--left"></div>
+          <img src="src/assets/img/zipper.jpg" alt="" class="mask__img">
         </div>
-
-        <!-- Right Mask Half -->
         <div id="mask-right" class="mask__half mask__half--right">
-          <div class="mask__shine mask__shine--right"></div>
-          <div class="mask__tribal mask__tribal--cyan"></div>
-          <div class="mask__eye mask__eye--right">
-            <div class="mask__eye-mesh"></div>
-            <div class="mask__eye-text font-brutal">SEX</div>
-          </div>
-          <div class="zipper__teeth zipper__teeth--right"></div>
+          <img src="src/assets/img/zipper.jpg" alt="" class="mask__img">
         </div>
 
-        <!-- Interactive Draggable Zipper -->
+        <!-- Drag Handle -->
         <div id="zipper-track" class="zipper">
-          <div id="zipper-pull" class="zipper__pull">
-            <!-- Slider Body -->
-            <div class="zipper__slider"></div>
-            <!-- Linkage Ring -->
-            <div class="zipper__ring"></div>
-            <!-- PukPuk Charm -->
-            <div class="zipper__charm">
-              <svg viewBox="0 0 200 200" class="pukpuk-svg pukpuk-zipper">
-                <defs>
-                  <linearGradient id="silverGradientZipper" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#8c8c8c" />
-                    <stop offset="25%" stop-color="#e6e6e6" />
-                    <stop offset="50%" stop-color="#ffffff" />
-                    <stop offset="75%" stop-color="#8c8c8c" />
-                    <stop offset="100%" stop-color="#595959" />
-                  </linearGradient>
-                  <linearGradient id="goldGradientZipper" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#bf953f" />
-                    <stop offset="25%" stop-color="#fcf6ba" />
-                    <stop offset="50%" stop-color="#b38728" />
-                    <stop offset="75%" stop-color="#fbf5b7" />
-                    <stop offset="100%" stop-color="#aa771c" />
-                  </linearGradient>
-                  <filter id="bevelFilter">
-                    <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur" />
-                    <feSpecularLighting in="blur" surfaceScale="5" specularConstant="1" specularExponent="20"
-                      lighting-color="white" result="specOut">
-                      <fePointLight x="-5000" y="-10000" z="20000" />
-                    </feSpecularLighting>
-                    <feComposite in="specOut" in2="SourceAlpha" operator="in" result="specOut" />
-                    <feComposite in="SourceGraphic" in2="specOut" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"
-                      result="litPaint" />
-                  </filter>
-                </defs>
-                <line x1="100" y1="50" x2="60" y2="20" stroke="#333" stroke-width="4" stroke-linecap="round" />
-                <circle cx="60" cy="20" r="10" fill="url(#goldGradientZipper)" stroke="#333" stroke-width="2" />
-                <line x1="100" y1="50" x2="140" y2="20" stroke="#333" stroke-width="4" stroke-linecap="round" />
-                <circle cx="140" cy="20" r="10" fill="url(#goldGradientZipper)" stroke="#333" stroke-width="2" />
-                <path d="M50 50 Q100 0 150 50 Q180 100 150 150 Q100 200 50 150 Q20 100 50 50"
-                  fill="url(#silverGradientZipper)" stroke="#333" stroke-width="4" filter="url(#bevelFilter)" />
-                <g>
-                  <ellipse cx="75" cy="90" rx="15" ry="25" fill="white" stroke="#333" stroke-width="3" />
-                  <circle cx="75" cy="90" r="5" fill="black" />
-                  <ellipse cx="125" cy="90" rx="15" ry="25" fill="white" stroke="#333" stroke-width="3" />
-                  <circle cx="125" cy="90" r="5" fill="black" />
-                </g>
-                <path d="M80 140 Q100 160 120 140" fill="none" stroke="#333" stroke-width="5" stroke-linecap="round" />
-                <path d="M60 60 Q100 20 140 60" fill="none" stroke="white" stroke-width="2" opacity="0.8"
-                  stroke-linecap="round" />
-              </svg>
-            </div>
-            <!-- Label -->
-            <div class="zipper__label font-brutal">PULL TO REVEAL</div>
-          </div>
+          <div id="zipper-pull" class="zipper__pull font-brutal">↓ DRAG</div>
         </div>
-      </div>
-
-      <!-- Instructions -->
-      <div id="mask-instructions" class="mask__instructions">
-        <span class="font-brutal">DRAG PUK PUK DOWN ↓</span>
       </div>
     </section>
 
