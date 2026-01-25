@@ -207,7 +207,14 @@
 }
 
 /* Draggable Sweater */
+/* Zonder JS: verberg sweater zodat tekst direct zichtbaar is */
 .nature__sweater {
+    display: none;
+}
+
+/* Met JS: toon sweater voor drag interactie */
+.js .nature__sweater {
+    display: block;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -230,7 +237,7 @@
 }
 
 @media (min-width: 48em) {
-    .nature__sweater {
+    .js .nature__sweater {
         max-width: 24rem;
     }
 }
