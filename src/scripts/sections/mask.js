@@ -81,6 +81,12 @@ export function initMaskSection() {
         } else {
             startPositie = event.touches[0].clientY;
         }
+
+        // Voeg move/end listeners alleen toe wanneer we slepen
+        document.addEventListener('mousemove', tijdensSlepen);
+        document.addEventListener('touchmove', tijdensSlepen, { passive: false });
+        document.addEventListener('mouseup', stopSlepen);
+        document.addEventListener('touchend', stopSlepen);
     }
 
     /**
@@ -113,6 +119,12 @@ export function initMaskSection() {
         if (!isAanHetSlepen || isKlaar) return;
         isAanHetSlepen = false;
 
+        // Verwijder de move/end listeners
+        document.removeEventListener('mousemove', tijdensSlepen);
+        document.removeEventListener('touchmove', tijdensSlepen);
+        document.removeEventListener('mouseup', stopSlepen);
+        document.removeEventListener('touchend', stopSlepen);
+
         // Check hoever we gesleept hebben
         const huidigeY = gsap.getProperty(sleepKnop, 'y');
 
@@ -127,15 +139,7 @@ export function initMaskSection() {
 
     // ====== STAP 5: Event Listeners toevoegen ======
 
-    // Start slepen
+    // Start slepen - alleen op de sleepknop
     sleepKnop.addEventListener('mousedown', startSlepen);
     sleepKnop.addEventListener('touchstart', startSlepen, { passive: false });
-
-    // Tijdens slepen (op document zodat je buiten het element kunt slepen)
-    document.addEventListener('mousemove', tijdensSlepen);
-    document.addEventListener('touchmove', tijdensSlepen);
-
-    // Stop slepen
-    document.addEventListener('mouseup', stopSlepen);
-    document.addEventListener('touchend', stopSlepen);
 }
