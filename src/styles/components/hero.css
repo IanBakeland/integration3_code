@@ -1,3 +1,11 @@
+/* ==========================================================================
+   Progressive Enhancement: 
+   - PukPuk charging interaction is hidden by default (no JS)
+   - Hero content (Walter's name, photo, stamp) is always visible
+   - With JS: PukPuk shows first, then reveals hero content after charging
+   - Without JS: Hero content shows directly, skipping the interaction
+   ========================================================================== */
+
 .hero {
     height: 100vh;
     width: 100%;
@@ -51,9 +59,10 @@
     line-height: 1.1;
 }
 
-/* PukPuk Container */
+/* PukPuk Container - Hidden by default (no-JS progressive enhancement) */
 .pukpuk {
-    display: flex;
+    display: none;
+    /* Hidden without JS */
     flex-direction: column;
     align-items: center;
     z-index: 20;
@@ -63,6 +72,11 @@
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
+}
+
+/* With JS: Show PukPuk charging interaction */
+html.js .pukpuk {
+    display: flex;
 }
 
 .pukpuk__glow {
@@ -129,12 +143,19 @@
     background-color: var(--color-neon);
 }
 
+/* Hero Content - Visible by default (no-JS progressive enhancement) */
 .hero__content {
     position: absolute;
     inset: 0;
     z-index: 30;
-    opacity: 0;
+    opacity: 1;
+    /* Visible without JS */
     overflow: hidden;
+}
+
+/* With JS: Hide hero content until PukPuk charging is complete */
+html.js .hero__content {
+    opacity: 0;
 }
 
 .hero__bg-image {
