@@ -6,7 +6,9 @@
 .intro {
     position: relative;
     min-height: 100vh;
-    background-color: var(--color-cream);
+    background-image: url('../../assets/img/background2.png');
+    background-size: cover;
+    background-position: center;
     overflow: hidden;
     display: flex;
     align-items: center;
