@@ -4,28 +4,45 @@
     overflow-x: hidden;
 }
 
+/* Zonder JS: verticaal gestapeld */
 .bear__container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Met JS: horizontaal scroll effect */
+.js .bear__container {
     height: 100vh;
     width: 300%;
-    display: flex;
+    flex-direction: row;
     flex-wrap: nowrap;
     position: relative;
 }
 
+/* Zonder JS: normale secties */
 .bear__panel {
-    width: 100vw;
-    height: 100%;
+    width: 100%;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: var(--space-4);
+}
+
+/* Met JS: horizontale panels */
+.js .bear__panel {
+    width: 100vw;
+    height: 100%;
     overflow-y: auto;
 }
 
 @media (min-width: 48em) {
     .bear__panel {
         padding: var(--space-10);
+    }
+
+    .js .bear__panel {
         overflow-y: visible;
     }
 }

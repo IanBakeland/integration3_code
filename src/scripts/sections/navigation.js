@@ -3,7 +3,9 @@ export function initNavigation() {
     const navLinks = document.querySelector('.navbar__menu');
 
     if (navHamburger && navLinks) {
-        navHamburger.addEventListener('click', () => {
+        // Prevent default link behavior when JS is active
+        navHamburger.addEventListener('click', (e) => {
+            e.preventDefault();
             navHamburger.classList.toggle('open');
             navLinks.classList.toggle('open');
 

@@ -31,16 +31,19 @@
       <img src="src/assets/img/logokleur.png" alt="Momu museum logo" class="navbar__logo-img navbar__logo-img--hover" />
     </a>
 
-    <button class="navbar__toggle" aria-label="Toggle menu" aria-expanded="false">
+    <!-- No-JS: link opent menu via :target | Met JS: button toggle -->
+    <a href="#mobile-menu" class="navbar__toggle" aria-label="Open menu">
       <span class="navbar__toggle-line"></span>
       <span class="navbar__toggle-line"></span>
       <span class="navbar__toggle-line"></span>
-    </button>
+    </a>
 
     <a href="https://visit.momu.be/#/tickets/time?group=timeSlot_and_day&date=2026-01-23" target="_blank"
       class="navbar__tickets-btn font-brutal">TICKETS</a>
 
-    <div class="navbar__menu font-brutal">
+    <div id="mobile-menu" class="navbar__menu font-brutal">
+      <!-- No-JS: close link -->
+      <a href="#" class="navbar__close" aria-label="Sluit menu">✕</a>
       <a href="#pukpuk-universe" class="navbar__link" data-text="PUK PUK">PUK PUK</a>
       <a href="#bear" class="navbar__link" data-text="W&L.T.">W&L.T.</a>
       <a href="#mask" class="navbar__link" data-text="LATEX">LATEX</a>
