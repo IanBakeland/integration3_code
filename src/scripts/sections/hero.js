@@ -59,8 +59,9 @@ export function initHero(onUnlock) {
             backgroundColor: '#ff0099',
             duration: 0.1
         })
-            .to(heroBg, { opacity: 0, duration: 0.1 }, '<')
-            .set(heroSection, { backgroundColor: '#eaddcf' })
+            // Keep heroBg (marquee) more visible after explosion
+            .to(heroBg, { opacity: 0.7, duration: 0.3 }, '<')
+            .set(heroSection, { backgroundColor: 'var(--color-gray-light)' })
             .to(heroContent, {
                 opacity: 1,
                 duration: 0.1

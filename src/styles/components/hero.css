@@ -4,6 +4,7 @@
    - Hero content (Walter's name, photo, stamp) is always visible
    - With JS: PukPuk shows first, then reveals hero content after charging
    - Without JS: Hero content shows directly, skipping the interaction
+   - Marquee text animation stays visible behind content
    ========================================================================== */
 
 .hero {
@@ -25,10 +26,11 @@
 .hero__bg {
     position: absolute;
     inset: 0;
-    z-index: 0;
+    z-index: 5;
     overflow: hidden;
     transform-origin: center;
     will-change: transform, filter;
+    pointer-events: none;
 }
 
 .hero__bg-text {
@@ -165,7 +167,7 @@ html.js .hero__content {
     background-size: cover;
     background-position: center;
     z-index: 1;
-    opacity: 0.8;
+    opacity: 0.5;
 }
 
 .hero__inner {
