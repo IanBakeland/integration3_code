@@ -1,12 +1,13 @@
 /* ===========================================
    NAVIGATION - Mobile First
+   Progressive Enhancement: werkt zonder JS
    =========================================== */
 
 .navbar {
     position: fixed;
     top: var(--space-4);
     left: 50%;
-    transform: translateX(-50%) translateY(-200%);
+    transform: translateX(-50%);
     width: calc(100% - var(--space-8));
     z-index: var(--z-navbar);
     display: flex;
@@ -17,9 +18,22 @@
     background: transparent;
     border: none;
     backdrop-filter: none;
+    opacity: 1;
+    pointer-events: auto;
+    transition: all var(--transition-smooth);
+}
+
+/* Met JS: navbar start verborgen en wordt zichtbaar via .visible class */
+.js .navbar {
     opacity: 0;
     pointer-events: none;
-    transition: all var(--transition-smooth);
+    transform: translateX(-50%) translateY(-200%);
+}
+
+.js .navbar.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
 }
 
 .navbar::before {
@@ -31,12 +45,6 @@
     border: var(--radius-sm) solid var(--color-black);
     clip-path: polygon(var(--space-4) 0, 100% 0, 100% calc(100% - var(--space-4)), calc(100% - var(--space-4)) 100%, 0 100%, 0 var(--space-4));
     z-index: -1;
-}
-
-.navbar.visible {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateX(-50%) translateY(0);
 }
 
 .navbar__logo {
@@ -92,6 +100,14 @@
     transition: all var(--transition-base);
 }
 
+/* No-JS fallback: menu opens via :target */
+.navbar__menu:target {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* With JS: menu opens via .open class */
 .navbar__menu.open {
     opacity: 1;
     visibility: visible;
@@ -129,10 +145,34 @@
     display: none;
 }
 
+/* Close button (no-JS fallback, only on mobile) */
+.navbar__close {
+    display: block;
+    align-self: flex-end;
+    color: var(--color-white);
+    font-size: var(--font-size-xl);
+    text-decoration: none;
+    padding: var(--space-2);
+    margin-bottom: var(--space-2);
+}
+
+/* Met JS: verberg close button (JS handled menu toggle) */
+.js .navbar__close {
+    display: none;
+}
+
+/* Desktop: altijd verborgen */
+@media (min-width: 48em) {
+    .navbar__close {
+        display: none;
+    }
+}
+
 /* Mobile Hamburger Toggle */
 .navbar__toggle {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 0.35rem;
     width: var(--space-10);
     height: var(--space-10);
@@ -141,6 +181,7 @@
     cursor: pointer;
     padding: var(--space-2);
     order: 3;
+    text-decoration: none;
 }
 
 .navbar__toggle-line {

@@ -129,7 +129,14 @@
 }
 
 /* Foreground - Zipper Image */
+/* Zonder JS: verberg foreground zodat content direct zichtbaar is */
 .mask__foreground {
+    display: none;
+}
+
+/* Met JS: toon foreground voor interactie */
+.js .mask__foreground {
+    display: block;
     position: absolute;
     inset: 0;
     z-index: 20;

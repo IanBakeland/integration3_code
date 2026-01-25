@@ -1,3 +1,6 @@
+// Progressive Enhancement: Add 'js' class to enable JS-dependent features
+document.documentElement.classList.add('js');
+
 // Section imports
 import { initNavigation } from './sections/navigation.js';
 import { initHero } from './sections/hero.js';
