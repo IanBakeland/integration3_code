@@ -3,10 +3,12 @@
 /* ============================================ */
 
 @import './components/hero.css';
+@import './components/intro.css';
 @import './components/pukpuk.css';
 @import './components/mask.css';
 @import './components/bear.css';
 @import './components/censored.css';
+@import './components/nature.css';
 @import './components/navigation.css';
 @import './components/museum-visit.css';
 @import './components/newsletter.css';
@@ -40,6 +42,8 @@
   --space-10: 2.5rem;
   --space-12: 3rem;
   --space-16: 4rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
 
   /* Typography - Font Sizes */
   --font-size-xs: 0.75rem;
@@ -55,7 +59,7 @@
   /* Typography - Font Families */
   --font-sans: 'Arial', sans-serif;
   --font-brutal: 'Arial Black', 'Impact', sans-serif;
-  --font-mono: 'Courier New', monospace;
+  --font-mono: 'Tektur', sans-serif;
 
   /* Border Radius */
   --radius-sm: 0.125rem;
@@ -138,7 +142,6 @@ body.locked {
 
 .font-mono {
   font-family: var(--font-mono);
-  font-weight: bold;
 }
 
 /* ============================================ */

@@ -4,12 +4,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="/src/styles/reset.css" />
   <link rel="stylesheet" href="/src/styles/global.css" />
   <title>MoMu | Walter</title>
   <meta name="description"
     content="Walter Van Beirendonck - Breaking Taboos. Een interactieve ervaring over mode, identiteit en activisme." />
-  <link rel="icon" href="/pukpuk.ico" type="image/x-icon" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -36,8 +42,8 @@
 
     <div class="navbar__menu font-brutal">
       <a href="#pukpuk-universe" class="navbar__link" data-text="PUK PUK">PUK PUK</a>
-      <a href="#mask" class="navbar__link" data-text="UNMASK">UNMASK</a>
-      <a href="#bear" class="navbar__link" data-text="REVOLUTION">REVOLUTION</a>
+      <a href="#bear" class="navbar__link" data-text="W&L.T.">W&L.T.</a>
+      <a href="#mask" class="navbar__link" data-text="LATEX">LATEX</a>
       <a href="#activism" class="navbar__link" data-text="ACTIVISM">ACTIVISM</a>
       <a href="https://visit.momu.be/#/tickets/time?group=timeSlot_and_day&date=2026-01-23" target="_blank"
         class="navbar__link navbar__link--tickets" data-text="TICKETS">TICKETS</a>
@@ -119,7 +125,7 @@
 
       <!-- PukPuk SVG -->
       <div id="pukpuk-hero" class="pukpuk__wrapper">
-        <img src="src/assets/img/pukpuk.png" alt="Puk Puk Charging" class="pukpuk__img" />
+        <img src="src/assets/img/pukpuk.svg" alt="Puk Puk Charging" class="pukpuk__img" />
       </div>
 
       <div class="hero__status">
@@ -131,11 +137,8 @@
       </div>
     </div>
 
-    <!-- Revealed Content (Walter Collage) -->
     <div id="hero-content" class="hero__content">
-      <!-- Abstract Background Shapes -->
-      <div class="hero__shape hero__shape--1"></div>
-      <div class="hero__shape hero__shape--2"></div>
+      <div class="hero__bg-image"></div>
 
       <div class="hero__inner">
         <!-- Typography Back Layer -->
@@ -151,10 +154,10 @@
 
 
 
-        <!-- Activist Stamp -->
+        <!-- Taboo Stamp -->
         <div class="activist-stamp">
           <div class="activist-stamp__inner">
-            <h2 class="font-brutal">ACTIVIST</h2>
+            <h2 class="font-brutal">BREKEN VAN<br>TABOES</h2>
           </div>
         </div>
 
@@ -163,6 +166,45 @@
   </section>
 
   <main id="main-content" class="main-content">
+
+    <!-- Introduction Section -->
+    <section id="intro" class="intro">
+      <div class="intro__container">
+
+        <div class="intro__content">
+          <!-- Left: Image -->
+          <figure class="intro__figure">
+            <div class="intro__image-frame">
+              <img src="src/assets/img/walter.jpg" alt="Verschillende walter figuren in verschillende kleuren"
+                class="intro__image" />
+            </div>
+            <figcaption class="intro__caption font-mono">MoMu Antwerpen</figcaption>
+          </figure>
+
+          <!-- Right: Text -->
+          <div class="intro__text">
+            <span class="intro__eyebrow font-mono">Fashion as Statement</span>
+
+            <h2 class="intro__title font-brutal">
+              <span class="intro__title-line">Mode is</span>
+              <span class="intro__title-line intro__title-line--accent">veel meer</span>
+              <span class="intro__title-line">dan wat we dragen</span>
+            </h2>
+
+            <div class="intro__body">
+              <p>Mode is veel meer dan wat we dragen; het is een spiegel van onze maatschappij. Het heeft de kracht om
+                te praten over onderwerpen waar we vaak liever over zwijgen. In deze reeks toont MoMu Antwerpen hoe
+                ontwerpers mode gebruiken om grenzen te verleggen.</p>
+
+              <p>In deze eerste story ontdek je de wereld van <strong>Walter Van Beirendonck</strong>. Hij ziet kleding
+                niet alleen als stof, maar als een manier om de wereld opener en vrijer te maken. Een visie waarin niets
+                te gek is en waarin iedereen zichzelf mag zijn.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
 
     <section id="pukpuk-universe" class="pp-universe">
 
@@ -177,216 +219,206 @@
 
         <!-- Puk Puk Figure -->
         <div class="pp-universe__figure">
-          <img src="src/assets/img/pukpuk.png" alt="Puk Puk" class="pp-universe__img" />
+          <img src="src/assets/img/pukpuk.svg" alt="Puk Puk" class="pp-universe__img" />
         </div>
 
         <!-- Content Cards (Floating) -->
         <div class="pp-universe__cards">
           <div class="pp-card pp-card--1">
-            <span class="pp-card__label font-mono">FIG. 01 — THE ALIEN</span>
-            <p class="pp-card__text font-brutal">I AM NOT<br>FROM HERE.</p>
+            <span class="pp-card__label font-mono">FIG. 01 — PUKPUK</span>
+            <p class="pp-card__text font-brutal">MASCOTTE VOOR ZIJN<br>COLLECTIES</p>
           </div>
 
           <div class="pp-card pp-card--2">
             <div class="pp-card__tag font-brutal">OUTSIDER</div>
             <p class="pp-card__desc font-mono">
-              "Puk Puk is de eeuwige toeschouwer. De vreemdeling die ons observeert en vraagt: Waarom is alles zo
-              saai?"
+              Door een alien als gids te gebruiken, kon Walter kritiek geven op
+              de mensenwereld. Puk Puk kijkt naar onze aarde en vindt onze regels over hoe we ons moeten kleden of wie
+              we moeten zijn maar raar en saai.
+            </p>
+            <p class="pp-card__desc font-mono">
+              Walter liet zien dat identiteit vloeibaar is. Puk Puk oordeelde
+              niet op basis van hoe je eruitzag of op wie je verliefd werd. Hij was een 'leeg canvas' waar iedereen zich
+              in kon herkennen, wat een steun was voor de queer-community.
             </p>
           </div>
         </div>
       </div>
     </section>
-
-    <section id="mask" class="mask">
-
-      <!-- Background: The Reveal -->
-      <div id="mask-content" class="mask__content">
-        <div class="mask__bg-glow"></div>
-        <div class="mask__bg-texture"></div>
-
-        <div class="mask-reveal">
-          <div class="mask-reveal__label font-brutal">Identity Revealed</div>
-
-          <h3 class="mask-reveal__title font-brutal">
-            HET SOCIALE<br /><span class="text-stroke">HARNAS</span>
-          </h3>
-
-          <div class="mask-reveal__grid">
-            <div class="mask-reveal__text-left font-mono">
-              "Walter verbergt het gezicht om de sociale hiërarchie uit te wissen. Zonder gezicht vallen leeftijd,
-              afkomst en gender weg."
-            </div>
-            <div class="mask-reveal__text-right">
-              <p class="mask-reveal__subtitle font-brutal">PURE VRIJHEID</p>
-              <p class="mask-reveal__desc font-mono">
-                Voor de queer-community is dit radicale bevrijding: het masker geeft je de veiligheid om je ware,
-                innerlijke rebel eindelijk naar buiten te laten komen.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Foreground: The Latex Mask -->
-      <div class="mask__foreground">
-        <!-- Left Mask Half -->
-        <div id="mask-left" class="mask__half mask__half--left">
-          <div class="mask__shine mask__shine--left"></div>
-          <div class="mask__tribal mask__tribal--pink"></div>
-          <div class="mask__eye mask__eye--left">
-            <div class="mask__eye-mesh"></div>
-            <div class="mask__eye-text font-brutal">SAFE</div>
-          </div>
-          <div class="zipper__teeth zipper__teeth--left"></div>
-        </div>
-
-        <!-- Right Mask Half -->
-        <div id="mask-right" class="mask__half mask__half--right">
-          <div class="mask__shine mask__shine--right"></div>
-          <div class="mask__tribal mask__tribal--cyan"></div>
-          <div class="mask__eye mask__eye--right">
-            <div class="mask__eye-mesh"></div>
-            <div class="mask__eye-text font-brutal">SEX</div>
-          </div>
-          <div class="zipper__teeth zipper__teeth--right"></div>
-        </div>
-
-        <!-- Interactive Draggable Zipper -->
-        <div id="zipper-track" class="zipper">
-          <div id="zipper-pull" class="zipper__pull">
-            <!-- Slider Body -->
-            <div class="zipper__slider"></div>
-            <!-- Linkage Ring -->
-            <div class="zipper__ring"></div>
-            <!-- PukPuk Charm -->
-            <div class="zipper__charm">
-              <svg viewBox="0 0 200 200" class="pukpuk-svg pukpuk-zipper">
-                <defs>
-                  <linearGradient id="silverGradientZipper" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#8c8c8c" />
-                    <stop offset="25%" stop-color="#e6e6e6" />
-                    <stop offset="50%" stop-color="#ffffff" />
-                    <stop offset="75%" stop-color="#8c8c8c" />
-                    <stop offset="100%" stop-color="#595959" />
-                  </linearGradient>
-                  <linearGradient id="goldGradientZipper" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#bf953f" />
-                    <stop offset="25%" stop-color="#fcf6ba" />
-                    <stop offset="50%" stop-color="#b38728" />
-                    <stop offset="75%" stop-color="#fbf5b7" />
-                    <stop offset="100%" stop-color="#aa771c" />
-                  </linearGradient>
-                  <filter id="bevelFilter">
-                    <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur" />
-                    <feSpecularLighting in="blur" surfaceScale="5" specularConstant="1" specularExponent="20"
-                      lighting-color="white" result="specOut">
-                      <fePointLight x="-5000" y="-10000" z="20000" />
-                    </feSpecularLighting>
-                    <feComposite in="specOut" in2="SourceAlpha" operator="in" result="specOut" />
-                    <feComposite in="SourceGraphic" in2="specOut" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"
-                      result="litPaint" />
-                  </filter>
-                </defs>
-                <line x1="100" y1="50" x2="60" y2="20" stroke="#333" stroke-width="4" stroke-linecap="round" />
-                <circle cx="60" cy="20" r="10" fill="url(#goldGradientZipper)" stroke="#333" stroke-width="2" />
-                <line x1="100" y1="50" x2="140" y2="20" stroke="#333" stroke-width="4" stroke-linecap="round" />
-                <circle cx="140" cy="20" r="10" fill="url(#goldGradientZipper)" stroke="#333" stroke-width="2" />
-                <path d="M50 50 Q100 0 150 50 Q180 100 150 150 Q100 200 50 150 Q20 100 50 50"
-                  fill="url(#silverGradientZipper)" stroke="#333" stroke-width="4" filter="url(#bevelFilter)" />
-                <g>
-                  <ellipse cx="75" cy="90" rx="15" ry="25" fill="white" stroke="#333" stroke-width="3" />
-                  <circle cx="75" cy="90" r="5" fill="black" />
-                  <ellipse cx="125" cy="90" rx="15" ry="25" fill="white" stroke="#333" stroke-width="3" />
-                  <circle cx="125" cy="90" r="5" fill="black" />
-                </g>
-                <path d="M80 140 Q100 160 120 140" fill="none" stroke="#333" stroke-width="5" stroke-linecap="round" />
-                <path d="M60 60 Q100 20 140 60" fill="none" stroke="white" stroke-width="2" opacity="0.8"
-                  stroke-linecap="round" />
-              </svg>
-            </div>
-            <!-- Label -->
-            <div class="zipper__label font-brutal">PULL TO REVEAL</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Instructions -->
-      <div id="mask-instructions" class="mask__instructions">
-        <span class="font-brutal">DRAG PUK PUK DOWN ↓</span>
-      </div>
-    </section>
-
 
     <div id="bear" class="bear">
       <div id="bear-container" class="bear__container">
 
-        <!-- Panel 1: Intro -->
+        <!-- Panel 1: Wild & Lethal Trash -->
         <section class="bear__panel bear__panel--1">
-          <h2 class="bear__title-main font-brutal">THE</h2>
-          <h2 class="bear__title-stroke font-brutal">BEAR</h2>
-          <p class="bear__intro font-mono">Scroll horizontally to inflate the revolution.</p>
-        </section>
-
-        <!-- Panel 2: The Logic -->
-        <section class="bear__panel bear__panel--2">
-          <div class="bear__content-box">
-            <h3 class="bear__subtitle font-brutal">De Schoonheid van het 'Te Veel'</h3>
-            <p class="bear__text font-mono">
-              "Terwijl catwalks gedomineerd werden door graatmagere lichamen, koos Walter voor 'Bears'. Hij viert de
-              mannelijkheid in al haar vormen. Bij Walter is imperfectie de ultieme vorm van menselijke perfectie."
-            </p>
+          <div class="bear__panel-content">
+            <div class="bear__text-section">
+              <h2 class="bear__title font-brutal">Wild & Lethal Trash</h2>
+              <p class="bear__paragraph font-sans">
+                In de vroege jaren '90 lanceerde Walter Van Beirendonck <span class="bear__highlight">'Wild & Lethal
+                  Trash'</span> (W.&L.T.). Het was geen beleefde mode, maar een <span
+                  class="bear__highlight--neon">vuistslag</span> in het gezicht van de traditionele
+                modewereld.
+              </p>
+              <p class="bear__paragraph font-sans">
+                W.&L.T. brak radicaal met tradities door de rauwe energie van de <span class="bear__highlight">straat-
+                  en
+                  clubcultuur</span> te omarmen. Maar het grootste taboe dat Walter
+                doorbrak, was de directe confrontatie met <span class="bear__highlight--neon">seksualiteit en de
+                  AIDS-crisis</span>.
+              </p>
+              <p class="bear__paragraph bear__paragraph--quote font-sans">
+                Met slogans als <em>"Kiss the Future!"</em> en het promoten van veilige seks via zijn kleding.
+              </p>
+            </div>
+            <div class="bear__image-section">
+              <img src="src/assets/img/wildandlethaltrash.png" alt="Wild & Lethal Trash" class="bear__image">
+            </div>
           </div>
         </section>
 
-        <!-- Panel 3: The Result -->
+        <!-- Panel 2: W.L.T. Aesthetic -->
+        <section class="bear__panel bear__panel--2">
+          <div class="bear__panel-content">
+            <div class="bear__image-section">
+              <img src="src/assets/img/modelswlt.jpg" alt="W.L.T. Aesthetic" class="bear__image">
+            </div>
+            <div class="bear__text-section">
+              <h2 class="bear__title font-brutal">Futuristische Visuele Taal</h2>
+              <p class="bear__paragraph font-sans">
+                Om deze radicale boodschap over te brengen, had Walter een nieuwe visuele taal nodig. De <span
+                  class="bear__highlight">W.L.T. esthetiek</span> was een futuristische mix van <span
+                  class="bear__highlight--neon">cartoon, sci-fi en fetisj</span>.
+              </p>
+              <p class="bear__paragraph font-sans">
+                Hij kleedde zijn modellen niet als mensen van vandaag, maar als <span class="bear__highlight">stammen
+                  van de toekomst</span>. Dit deed hij door het gebruik van onnatuurlijke, glanzende materialen zoals
+                <span class="bear__highlight--neon">PVC, rubber en latex</span>. Deze synthetische 'tweede huiden',
+                vaak in snoepkleuren of fel oranje, transformeerden de dragers in levende actiefiguren, klaar voor een
+                rave op een andere planeet.
+              </p>
+              <p class="bear__paragraph bear__paragraph--quote font-sans">
+                Het was de perfecte uitrusting voor een generatie die opgroeide met <em>MTV en de eerste
+                  spelcomputers</em>.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Panel 3: Video -->
         <section class="bear__panel bear__panel--3">
-          <h2 class="bear__power font-brutal">POWER</h2>
+          <div class="bear__panel-content">
+            <div class="bear__text-section">
+              <h2 class="bear__title font-brutal">Explosieve Performance</h2>
+              <p class="bear__paragraph font-sans">
+                Woorden alleen zijn niet genoeg om de energie van <span class="bear__highlight">W.L.T.</span> te
+                beschrijven. Bekijk het fragment en zie hoe de modellen de catwalk veranderden in een <span
+                  class="bear__highlight--neon">explosieve performance</span>.
+              </p>
+            </div>
+            <div class="bear__video-section">
+              <div class="bear__video-wrapper">
+                <iframe class="bear__video" src="https://www.youtube.com/embed/J7tROk2WSX0" title="W.L.T. Fashion Show"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
         </section>
 
       </div>
     </div>
 
-    <section id="activism" class="censored">
+    <section id="mask" class="mask">
 
-      <div class="censored__container">
-        <h2 class="censored__title font-brutal">
-          ACTIVISM IS<br /><span class="text-pink">NOT A CRIME</span>
-        </h2>
-
-        <div class="censored__grid">
-          <div class="censored__text font-mono">
-            "Geen woorden, maar daden. In de jaren '90 schreeuwde hij 'SAFE SEX'. Vandaag vecht hij tegen uitsluiting
-            met slogans als 'KISS THE FUTURE'. Zijn mode is een visueel protest tegen uitsluiting en racisme."
-          </div>
-
-          <!-- Collection Photo 1 -->
-          <div class="censored__photo censored__photo--1">
-            <span class="censored__photo-label font-brutal">COLLECTION 1996</span>
-            <div class="censor-bar font-brutal">CENSORED</div>
-          </div>
-
-          <!-- Collection Photo 2 -->
-          <div class="censored__photo censored__photo--2">
-            <div class="censor-bar censor-bar--rotated font-brutal">EXPLICIT</div>
-          </div>
-
-          <!-- Collection Photo 3 -->
-          <div class="censored__photo censored__photo--3">
-            <div class="censored__photo-brand">W&amp;LT</div>
-            <div class="censor-bar censor-bar--1 font-brutal">TOO LOUD</div>
-            <div class="censor-bar censor-bar--2 font-brutal">TOO MAY</div>
-          </div>
+      <!-- Content (Behind) -->
+      <div id="mask-content" class="mask__content">
+        <div class="mask-reveal">
+          <h3 class="mask-reveal__title font-brutal">
+            HET SOCIALE<br><span class="text-stroke">HARNAS</span>
+          </h3>
+          <p class="mask-reveal__quote font-mono">
+            Van Beirendonck omarmt de fetisj-associaties van latex bewust om taboes te doorbreken en seksuele
+            diversiteit te vieren binnen de high fashion. Dit zorgt voor een spanning tussen zijn vaak speelse
+            vormentaal en deze volwassen thema's.
+          </p>
+          <p class="mask-reveal__subtitle font-brutal">PURE VRIJHEID</p>
+          <p class="mask-reveal__desc font-mono">
+            De meest indringende toepassing zien we in de latex maskers. Deze transformeren de drager radicaal in een
+            'ander' wezen uit Walters universum, wat het theatrale karakter van zijn shows versterkt.
+          </p>
         </div>
       </div>
 
-      <!-- Floating Slogans -->
-      <div class="censored__slogan font-brutal" style="top: 15%; left: 5%; transform: rotate(-20deg);">SAFE SEX</div>
-      <div class="censored__slogan font-brutal" style="top: 45%; left: 70%; transform: rotate(30deg);">KISS THE FUTURE
+      <!-- Foreground: Zipper Image (Splits) -->
+      <div class="mask__foreground">
+        <div id="mask-left" class="mask__half mask__half--left">
+          <img src="src/assets/img/zipper.png" alt="" class="mask__img">
+        </div>
+        <div id="mask-right" class="mask__half mask__half--right">
+          <img src="src/assets/img/zipper.png" alt="" class="mask__img">
+        </div>
+
+        <!-- Drag Handle -->
+        <div id="zipper-track" class="zipper">
+          <div id="zipper-pull" class="zipper__pull font-brutal">↓ DRAG</div>
+        </div>
       </div>
-      <div class="censored__slogan font-brutal" style="top: 75%; left: 20%; transform: rotate(-10deg);">STOP RACISM
-      </div>
-      <div class="censored__slogan font-brutal" style="top: 25%; left: 60%; transform: rotate(45deg);">BREAK TABOOS
+    </section>
+
+    <section id="activism" class="nature">
+
+      <div class="nature__wrapper">
+
+        <!-- Main Title - Diagonal -->
+        <h2 class="nature__title font-brutal">
+          <span class="nature__title-line">DE NATUUR</span>
+          <span class="nature__title-line nature__title-line--accent">ALS BONDGENOOT</span>
+        </h2>
+
+        <!-- Scattered Content Layout -->
+        <div class="nature__scattered">
+
+          <!-- Text Block 1 -->
+          <div class="nature__block nature__block--1">
+            <span class="nature__label font-mono">01 — DE MENS ALS DIER</span>
+            <p class="nature__text">
+              Walter ziet de mens niet als een wezen dat boven de natuur staat, maar als onderdeel ervan. In zijn
+              collecties zie je dit terug door het gebruik van <strong>dierenprints</strong>, organische vormen en zijn
+              bekende <strong>'beast'-motieven</strong>. Hij haalt de drager uit de grijze stad en plaatst hen terug in
+              een wilde, kleurrijke jungle.
+            </p>
+          </div>
+
+          <!-- Photo 1 - Tilted -->
+          <figure class="nature__photo nature__photo--1">
+            <img src="src/assets/img/protest1.webp" alt="Walter Van Beirendonck protest" />
+            <figcaption class="font-brutal">BEAST</figcaption>
+          </figure>
+
+          <!-- Photo 2 - Opposite tilt -->
+          <figure class="nature__photo nature__photo--2">
+            <img src="src/assets/img/protest2.jpg" alt="Walter Van Beirendonck protest" />
+            <figcaption class="font-brutal">WILD</figcaption>
+          </figure>
+
+          <!-- Text Block 2 with Draggable Sweater -->
+          <div class="nature__block nature__block--2">
+            <span class="nature__label font-mono">02 — MODE ALS GROEN PROTEST</span>
+            <p class="nature__text">
+              Voor Walter is de natuur ook een politiek thema. Hij gebruikt de catwalk vaak om aandacht te vragen voor
+              het klimaat en de kwetsbaarheid van onze aarde. Met duidelijke slogans op zijn kleding protesteert hij
+              tegen de verwoesting van het milieu. Voor hem is mode een middel om mensen wakker te schudden: <strong>we
+                moeten vechten voor de planeet</strong> voordat het te laat is.
+            </p>
+
+            <!-- Draggable Sweater Cover -->
+            <img src="src/assets/img/trui.png" alt="Sleep mij weg" class="nature__sweater" id="nature-sweater" />
+          </div>
+
+        </div>
+
       </div>
     </section>
 

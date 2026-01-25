@@ -1,0 +1,236 @@
+/* ==========================================================================
+   Nature Section - De Natuur als Bondgenoot
+   Magazine-style scattered layout with tilted photos
+   ========================================================================== */
+
+.nature {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #f0eeea;
+    position: relative;
+    overflow: hidden;
+    padding: var(--space-16) 0;
+}
+
+/* Background Words - Scattered */
+.nature__bg-words {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.nature__bg-word {
+    position: absolute;
+    font-size: clamp(5rem, 15vw, 12rem);
+    color: rgba(0, 0, 0, 0.03);
+    white-space: nowrap;
+}
+
+.nature__bg-word:nth-child(1) {
+    top: 5%;
+    left: -5%;
+    transform: rotate(-8deg);
+}
+
+.nature__bg-word:nth-child(2) {
+    top: 40%;
+    right: -10%;
+    transform: rotate(5deg);
+}
+
+.nature__bg-word:nth-child(3) {
+    bottom: 10%;
+    left: 20%;
+    transform: rotate(-3deg);
+}
+
+/* Wrapper */
+.nature__wrapper {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 var(--space-4);
+    position: relative;
+    z-index: 10;
+}
+
+/* Title */
+.nature__title {
+    text-align: center;
+    margin-bottom: var(--space-12);
+}
+
+.nature__title-line {
+    display: block;
+    font-size: clamp(2rem, 8vw, 4.5rem);
+    line-height: 1;
+    color: var(--color-black);
+}
+
+.nature__title-line--accent {
+    color: var(--color-pink);
+    transform: rotate(-2deg);
+    display: inline-block;
+    margin-top: var(--space-2);
+}
+
+/* Scattered Layout */
+.nature__scattered {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+    position: relative;
+}
+
+@media (min-width: 48em) {
+    .nature__scattered {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        gap: var(--space-6);
+        align-items: start;
+    }
+}
+
+/* Text Blocks */
+.nature__block {
+    background: var(--color-white);
+    border: var(--radius-base) solid var(--color-black);
+    padding: var(--space-6);
+    box-shadow: 0.5rem 0.5rem 0 0 var(--color-black);
+    position: relative;
+}
+
+.nature__block--1 {
+    transform: rotate(-1deg);
+}
+
+.nature__block--2 {
+    transform: rotate(1deg);
+}
+
+@media (min-width: 48em) {
+    .nature__block--1 {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .nature__block--2 {
+        grid-column: 2;
+        grid-row: 3;
+    }
+}
+
+.nature__label {
+    display: block;
+    font-size: var(--font-size-xs);
+    color: var(--color-pink);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-3);
+}
+
+.nature__text {
+    font-size: var(--font-size-base);
+    line-height: 1.7;
+    color: var(--color-gray-dark);
+}
+
+.nature__text strong {
+    color: var(--color-black);
+    background: linear-gradient(to top, var(--color-neon) 40%, transparent 40%);
+}
+
+/* Photos - Polaroid Style */
+.nature__photo {
+    background: var(--color-white);
+    padding: var(--space-3);
+    padding-bottom: var(--space-10);
+    border: var(--radius-base) solid var(--color-black);
+    box-shadow: 0.5rem 0.5rem 0 0 rgba(0, 0, 0, 0.8);
+    position: relative;
+    transition: transform var(--transition-base);
+}
+
+.nature__photo:hover {
+    z-index: 20;
+}
+
+.nature__photo--1 {
+    transform: rotate(4deg);
+}
+
+.nature__photo--1:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+.nature__photo--2 {
+    transform: rotate(-3deg);
+}
+
+.nature__photo--2:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+@media (min-width: 48em) {
+    .nature__photo--1 {
+        grid-column: 2;
+        grid-row: 1 / 3;
+        justify-self: end;
+        max-width: 85%;
+    }
+
+    .nature__photo--2 {
+        grid-column: 1;
+        grid-row: 2 / 4;
+        max-width: 85%;
+    }
+}
+
+.nature__photo img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+}
+
+.nature__photo figcaption {
+    position: absolute;
+    bottom: var(--space-2);
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: var(--font-size-lg);
+    color: var(--color-black);
+    letter-spacing: 0.1em;
+}
+
+/* Draggable Sweater */
+.nature__sweater {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-5deg);
+    width: 100%;
+    max-width: 20rem;
+    cursor: grab;
+    z-index: 20;
+    filter: drop-shadow(0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.3));
+    transition: filter var(--transition-fast);
+    user-select: none;
+}
+
+.nature__sweater:hover {
+    filter: drop-shadow(0.75rem 0.75rem 1.5rem rgba(0, 0, 0, 0.4));
+}
+
+.nature__sweater:active {
+    cursor: grabbing;
+}
+
+@media (min-width: 48em) {
+    .nature__sweater {
+        max-width: 24rem;
+    }
+}

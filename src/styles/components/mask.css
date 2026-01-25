@@ -1,3 +1,7 @@
+/* ============================================ */
+/* MASK SECTION - SIMPLIFIED                    */
+/* ============================================ */
+
 .mask {
     height: 100vh;
     width: 100%;
@@ -7,7 +11,7 @@
     z-index: 20;
 }
 
-/* Mask Content (Revealed) */
+/* Content (Behind the zipper) */
 .mask__content {
     position: absolute;
     inset: 0;
@@ -16,7 +20,8 @@
     justify-content: center;
     padding: var(--space-6);
     z-index: 0;
-    background-color: var(--color-gray-light);
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+    overflow: hidden;
 }
 
 @media (min-width: 48em) {
@@ -25,298 +30,175 @@
     }
 }
 
-.mask__bg-glow {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.1;
-    background: radial-gradient(circle at center, var(--color-pink) 0%, transparent 70%);
-    animation: pulse 3s ease-in-out infinite;
-}
-
-.mask__bg-texture {
-    position: absolute;
-    inset: 0;
-    opacity: 0.5;
-}
-
-/* Mask Reveal Box */
+/* Reveal Box - Asymmetric Layout */
 .mask-reveal {
-    max-width: 80rem;
-    text-align: center;
+    max-width: 60rem;
+    text-align: left;
     position: relative;
     z-index: 10;
-    border: 0.375rem solid var(--color-black);
     padding: var(--space-8);
-    background: var(--color-white);
-    box-shadow: var(--space-5) var(--space-5) 0 var(--color-neon);
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    border-left: 0.5rem solid var(--color-pink);
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.1),
+        0 2rem 4rem rgba(0, 0, 0, 0.5),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.05);
 }
 
 @media (min-width: 48em) {
     .mask-reveal {
         padding: var(--space-16);
+        border-left-width: 0.75rem;
     }
 }
 
-.mask-reveal__label {
-    position: absolute;
-    top: calc(-1 * var(--space-6));
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--color-black);
+/* Title with Neon Effect */
+.mask-reveal__title {
+    font-size: 3rem;
+    margin-bottom: var(--space-8);
     color: var(--color-white);
-    padding: var(--space-2) var(--space-6);
-    font-size: var(--font-size-xl);
+    line-height: 0.9;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
+    letter-spacing: -0.02em;
 }
 
-.mask-reveal__title {
-    font-size: var(--font-size-4xl);
-    margin-bottom: var(--space-8);
-    color: var(--color-black);
-    line-height: 1;
+.mask-reveal__title .text-stroke {
+    -webkit-text-stroke: 2px var(--color-neon);
+    color: transparent;
+    text-shadow:
+        0 0 20px rgba(204, 255, 0, 0.5),
+        0 0 40px rgba(204, 255, 0, 0.3);
 }
 
 @media (min-width: 48em) {
     .mask-reveal__title {
-        font-size: 4.5rem;
+        font-size: 5rem;
     }
 }
 
-.mask-reveal__grid {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-8);
-    text-align: left;
-    align-items: center;
-}
-
-@media (min-width: 48em) {
-    .mask-reveal__grid {
-        flex-direction: row;
-    }
-}
-
-.mask-reveal__text-left {
-    flex: 1;
-    font-size: var(--font-size-lg);
-    line-height: 1.6;
-    color: var(--color-black);
-}
-
-@media (min-width: 48em) {
-    .mask-reveal__text-left {
-        font-size: var(--font-size-xl);
-    }
-}
-
-.mask-reveal__text-right {
-    flex: 1;
-    border-left: var(--radius-base) solid var(--color-pink);
+/* Quote - Highlighted */
+.mask-reveal__quote {
+    font-size: var(--font-size-base);
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--space-8);
     padding-left: var(--space-6);
+    border-left: 3px solid var(--color-pink);
+    background: linear-gradient(90deg, rgba(255, 0, 153, 0.1) 0%, transparent 100%);
+    padding: var(--space-4) var(--space-6);
 }
 
+@media (min-width: 48em) {
+    .mask-reveal__quote {
+        font-size: var(--font-size-lg);
+        padding: var(--space-6) var(--space-8);
+    }
+}
+
+/* Subtitle with Glow */
 .mask-reveal__subtitle {
-    font-size: var(--font-size-2xl);
-    color: var(--color-pink);
-    margin-bottom: var(--space-2);
+    font-size: var(--font-size-xl);
+    color: var(--color-neon);
+    margin-bottom: var(--space-4);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-shadow:
+        0 0 10px rgba(204, 255, 0, 0.6),
+        0 0 20px rgba(204, 255, 0, 0.4);
 }
 
+@media (min-width: 48em) {
+    .mask-reveal__subtitle {
+        font-size: var(--font-size-2xl);
+    }
+}
+
+/* Description */
 .mask-reveal__desc {
     font-size: var(--font-size-sm);
-    color: #666;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.8;
+    max-width: 45rem;
 }
 
-/* Mask Foreground */
+@media (min-width: 48em) {
+    .mask-reveal__desc {
+        font-size: var(--font-size-base);
+    }
+}
+
+/* Foreground - Zipper Image */
 .mask__foreground {
     position: absolute;
     inset: 0;
     z-index: 20;
-    pointer-events: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    pointer-events: auto;
+    cursor: grab;
 }
 
-/* Mask Halves */
+/* Image Halves */
 .mask__half {
     position: absolute;
-    height: 110vh;
-    width: 50vw;
-    top: -5vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    overflow: hidden;
 }
 
 .mask__half--left {
     left: 0;
-    align-items: flex-end;
-    background: linear-gradient(135deg, #2a2a2a 0%, #000000 100%);
-    box-shadow: 0.625rem 0 3.125rem rgba(0, 0, 0, 0.8);
 }
 
 .mask__half--right {
     right: 0;
-    align-items: flex-start;
-    background: linear-gradient(225deg, #2a2a2a 0%, #000000 100%);
-    box-shadow: -10px 0 50px rgba(0, 0, 0, 0.8);
 }
 
-/* Mask Shine */
-.mask__shine {
+.mask__img {
     position: absolute;
     top: 0;
-    width: 8rem;
+    width: 200%;
     height: 100%;
+    object-fit: cover;
 }
 
-.mask-shine-left {
-    right: 0;
-    background: linear-gradient(to left, rgba(255, 255, 255, 0.1), transparent);
-}
-
-.mask-shine-right {
+.mask__half--left .mask__img {
     left: 0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.1), transparent);
 }
 
-/* Mask Tribal Patterns */
-.mask__tribal--pink {
-    position: absolute;
-    top: 20%;
-    right: 10%;
-    width: 10rem;
-    height: 16rem;
-    background-color: var(--color-pink);
-    mix-blend-mode: overlay;
-    opacity: 0.8;
-    clip-path: polygon(100% 0, 0 30%, 100% 60%, 20% 100%, 80% 40%, 0 10%);
-}
-
-.mask__tribal--cyan {
-    position: absolute;
-    top: 20%;
-    left: 10%;
-    width: 8rem;
-    height: 8rem;
-    border-radius: 50%;
-    border: 0.75rem solid var(--color-cyan);
-    opacity: 0.8;
-    mix-blend-mode: screen;
-}
-
-@media (min-width: 48em) {
-    .mask__tribal--cyan {
-        width: 12rem;
-        height: 12rem;
-    }
-}
-
-/* Mask Eyes */
-.mask__eye {
-    position: absolute;
-    top: 35%;
-    width: 8rem;
-    height: 5rem;
-    background: var(--color-black);
-    border: 0.25rem solid var(--color-white);
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-@media (min-width: 48em) {
-    .mask__eye {
-        width: 12rem;
-        height: 8rem;
-    }
-}
-
-.mask__eye--left {
-    right: 5%;
-    border-radius: 3rem 0 0 1rem;
-}
-
-.mask__eye--right {
-    left: 5%;
-    border-radius: 0 3rem 1rem 0;
-}
-
-.mask__eye-mesh {
-    position: absolute;
-    inset: 0;
-    opacity: 0.5;
-    background-image: radial-gradient(var(--color-white) 0.125rem, transparent 0.125rem);
-    background-size: 0.5rem 8px;
-}
-
-.mask__eye-text {
-    position: relative;
-    z-index: 10;
-    color: var(--color-white);
-    font-size: 0.75rem;
-    background: var(--color-black);
-    padding: 0 0.5rem;
-}
-
-@media (min-width: 48em) {
-    .mask__eye-text {
-        font-size: 1.25rem;
-    }
-}
-
-/* Zipper Teeth */
-.zipper__teeth {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.zipper__teeth--left {
+.mask__half--right .mask__img {
     right: 0;
-    border-right: 1px solid #444;
-    background-image: linear-gradient(to bottom, #333 50%, #000 50%);
-    background-size: 100% 20px;
 }
 
-.zipper__teeth--right {
-    left: 0;
-    border-left: 1px solid #444;
-    background-image: linear-gradient(to bottom, #000 50%, #333 50%);
-    background-size: 100% 20px;
-}
-
-/* Zipper Track - Block */
+/* Zipper Drag Handle */
 .zipper {
     position: absolute;
     top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     height: 100vh;
-    width: 8rem;
+    width: 6rem;
     z-index: 50;
     pointer-events: none;
     display: flex;
     justify-content: center;
 }
 
-/* Zipper Pull */
 .zipper__pull {
-    width: 6rem;
-    height: 6rem;
+    width: 4rem;
+    height: 4rem;
+    background: var(--color-black);
+    color: var(--color-white);
+    border: 0.25rem solid var(--color-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-sm);
     pointer-events: auto;
     cursor: grab;
-    transition: transform 0.2s;
-    margin-top: 0.5rem;
-    position: relative;
+    transition: transform 0.2s, background-color 0.2s;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
 }
 
 .zipper__pull:active {
@@ -324,120 +206,6 @@
 }
 
 .zipper__pull:hover {
-    transform: scale(1.05);
-}
-
-@media (min-width: 48em) {
-    .zipper__pull {
-        width: 8rem;
-        height: 8rem;
-    }
-}
-
-/* Zipper Slider Body */
-.zipper__slider {
-    position: absolute;
-    top: -3rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 3rem;
-    height: 4rem;
-    background: linear-gradient(to bottom right, #9ca3af, #e5e7eb, #9ca3af);
-    border-radius: 0.5rem;
-    border: 0.125rem solid #4b5563;
-    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.3);
-    z-index: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.zipper__slider::after {
-    content: '';
-    width: 2rem;
-    height: 2.5rem;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 0.25rem;
-}
-
-/* Zipper Ring */
-.zipper__ring {
-    position: absolute;
-    top: -0.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 1.5rem;
-    height: 2rem;
-    border: 0.25rem solid #d1d5db;
-    border-radius: 9999rem;
-    z-index: 10;
-    background: transparent;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2);
-}
-
-/* Zipper Charm */
-.zipper__charm {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    filter: drop-shadow(0 0.625rem 0.625rem rgba(0, 0, 0, 0.8));
-}
-
-.pukpuk-zipper {
-    width: 100%;
-    height: 100%;
-}
-
-/* Zipper Label */
-.zipper__label {
-    position: absolute;
-    bottom: -1.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(0.25rem);
-    color: var(--color-white);
-    font-size: 0.625rem;
-    padding: 0.25rem 0.75rem;
-    border: 1px solid #6b7280;
-    white-space: nowrap;
-    border-radius: 9999rem;
-}
-
-/* Mask Instructions */
-.mask__instructions {
-    position: absolute;
-    bottom: 2.5rem;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    z-index: 50;
-    pointer-events: none;
-    mix-blend-mode: difference;
-    transition: opacity 0.5s;
-}
-
-.mask__instructions span {
-    background: var(--color-white);
-    color: var(--color-black);
-    padding: 0.5rem 1rem;
-    font-size: 1.25rem;
-    animation: bounce 1s infinite;
-    border: 0.125rem solid var(--color-black);
-    box-shadow: 0.25rem 0.25rem 0 var(--color-neon);
-}
-
-.mask__instructions.hidden {
-    opacity: 0;
-}
-
-/* Reduced Motion - Stop animations */
-@media (prefers-reduced-motion: reduce) {
-    .mask__bg-glow {
-        animation: none;
-    }
-
-    .mask__instructions span {
-        animation: none;
-    }
+    transform: scale(1.1);
+    background-color: var(--color-pink);
 }

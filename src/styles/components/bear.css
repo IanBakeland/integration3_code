@@ -19,7 +19,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: var(--space-10);
+    padding: var(--space-4);
+    overflow-y: auto;
+}
+
+@media (min-width: 48em) {
+    .bear__panel {
+        padding: var(--space-10);
+        overflow-y: visible;
+    }
 }
 
 .bear__panel--1 {
@@ -27,6 +35,142 @@
     border-right: var(--space-2) solid var(--color-neon);
 }
 
+/* Panel Content Container */
+.bear__panel-content {
+    width: 100%;
+    max-width: 75rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    padding: var(--space-2);
+}
+
+@media (min-width: 48em) {
+    .bear__panel-content {
+        flex-direction: row;
+        align-items: center;
+        gap: var(--space-12);
+        padding: var(--space-10);
+    }
+}
+
+/* Text Section */
+.bear__text-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+@media (min-width: 48em) {
+    .bear__text-section {
+        gap: var(--space-4);
+    }
+}
+
+.bear__title {
+    font-size: 1.75rem;
+    color: var(--color-neon);
+    line-height: 1.1;
+    margin-bottom: var(--space-3);
+}
+
+@media (min-width: 48em) {
+    .bear__title {
+        font-size: 4rem;
+        margin-bottom: var(--space-4);
+    }
+}
+
+.bear__paragraph {
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+    color: var(--color-white);
+    font-weight: 300;
+    letter-spacing: 0.01em;
+}
+
+@media (min-width: 48em) {
+    .bear__paragraph {
+        font-size: var(--font-size-lg);
+        line-height: 1.8;
+    }
+}
+
+/* Text Highlights */
+.bear__highlight {
+    background: linear-gradient(90deg, rgba(255, 0, 153, 0.2) 0%, transparent 100%);
+    padding: 0.125rem 0.375rem;
+    border-left: 2px solid var(--color-pink);
+    font-weight: 500;
+}
+
+.bear__highlight--neon {
+    background: linear-gradient(90deg, rgba(204, 255, 0, 0.15) 0%, transparent 100%);
+    padding: 0.125rem 0.375rem;
+    border-left: 2px solid var(--color-neon);
+    font-weight: 500;
+}
+
+/* Quote Style */
+.bear__paragraph--quote {
+    font-style: italic;
+    padding-left: var(--space-3);
+    border-left: 3px solid var(--color-neon);
+    margin-top: var(--space-3);
+    opacity: 0.9;
+}
+
+@media (min-width: 48em) {
+    .bear__paragraph--quote {
+        padding-left: var(--space-4);
+        margin-top: var(--space-6);
+    }
+}
+
+.bear__paragraph--quote em {
+    color: var(--color-neon);
+    font-style: normal;
+    font-weight: 600;
+}
+
+/* Image Section */
+.bear__image-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bear__image {
+    width: 100%;
+    height: auto;
+    max-width: 10rem;
+    border: 4px solid var(--color-white);
+    box-shadow:
+        0 0.5rem 2rem rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.bear__image:hover {
+    transform: scale(1.02);
+}
+
+@media (min-width: 48em) {
+    .bear__image {
+        max-width: 30rem;
+        border-width: 6px;
+    }
+}
+
+/* Panel 1 - no border/shadow, only hover */
+.bear__panel--1 .bear__image {
+    border: none;
+    box-shadow: none;
+}
+
+/* Legacy styles for backward compatibility */
 .bear__title-main {
     font-size: 6rem;
     color: var(--color-neon);
@@ -64,36 +208,37 @@
     border-right: var(--space-2) solid var(--color-white);
     position: relative;
     overflow: hidden;
-    flex-direction: row;
-    justify-content: space-between;
 }
 
-.bear__content-box {
-    width: 90%;
-    z-index: 10;
-    padding: var(--space-8);
-    background: rgba(0, 0, 0, 0.8);
-    border: var(--radius-base) solid var(--color-white);
-    backdrop-filter: blur(var(--radius-base));
-    transform: rotate(-2deg);
-}
-
-@media (min-width: 48em) {
-    .bear__content-box {
-        width: 50%;
-    }
-}
-
-.bear__subtitle {
-    font-size: var(--font-size-4xl);
-    margin-bottom: var(--space-4);
-    color: var(--color-cyan);
-}
-
-.bear__text {
-    font-size: var(--font-size-lg);
-    line-height: 1.6;
+/* Panel 2 specific text colors for contrast on pink */
+.bear__panel--2 .bear__title {
     color: var(--color-white);
+}
+
+.bear__panel--2 .bear__paragraph {
+    color: var(--color-white);
+}
+
+.bear__panel--2 .bear__highlight {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 100%);
+    border-left: 3px solid var(--color-black);
+    color: var(--color-white);
+}
+
+.bear__panel--2 .bear__highlight--neon {
+    background: linear-gradient(90deg, rgba(0, 255, 255, 0.4) 0%, rgba(0, 255, 255, 0.2) 100%);
+    border-left: 3px solid var(--color-cyan);
+    color: var(--color-white);
+}
+
+.bear__panel--2 .bear__paragraph--quote {
+    border-left-color: var(--color-white);
+    opacity: 0.9;
+}
+
+.bear__panel--2 .bear__paragraph--quote em {
+    color: var(--color-cyan);
+    font-weight: 700;
 }
 
 .bear__panel--3 {
@@ -101,16 +246,51 @@
     position: relative;
 }
 
-.bear__power {
-    position: absolute;
-    z-index: 0;
-    opacity: 0.2;
+/* Panel 3 specific text colors for contrast on cyan */
+.bear__panel--3 .bear__title {
     color: var(--color-black);
-    font-size: 8rem;
 }
 
-@media (min-width: 48em) {
-    .bear__power {
-        font-size: 12rem;
-    }
+.bear__panel--3 .bear__paragraph {
+    color: var(--color-black);
+}
+
+.bear__panel--3 .bear__highlight {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.15) 0%, transparent 100%);
+    border-left-color: var(--color-black);
+    color: var(--color-black);
+}
+
+.bear__panel--3 .bear__highlight--neon {
+    background: linear-gradient(90deg, rgba(255, 0, 153, 0.3) 0%, transparent 100%);
+    border-left-color: var(--color-pink);
+    color: var(--color-black);
+}
+
+/* Video Section */
+.bear__video-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bear__video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 40rem;
+    padding-bottom: 56.25%;
+    /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    border: 4px solid var(--color-black);
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.3);
+}
+
+.bear__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }

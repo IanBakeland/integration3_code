@@ -1,0 +1,200 @@
+/* ==========================================================================
+   Introduction Section
+   A refined entry point before diving into Walter's world
+   ========================================================================== */
+
+.intro {
+    position: relative;
+    min-height: 100vh;
+    background-color: #f0eeeb;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: var(--space-16) var(--space-4) var(--space-24) var(--space-4);
+}
+
+@media (min-width: 48em) {
+    .intro {
+        padding: var(--space-16) var(--space-4);
+    }
+}
+
+.intro__container {
+    position: relative;
+    width: 100%;
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   Content Layout
+   -------------------------------------------------------------------------- */
+
+.intro__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+    position: relative;
+    z-index: 10;
+}
+
+@media (min-width: 64em) {
+    .intro__content {
+        flex-direction: row;
+        align-items: center;
+        gap: var(--space-16);
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Image/Figure
+   -------------------------------------------------------------------------- */
+
+.intro__figure {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 16rem;
+    position: relative;
+}
+
+@media (min-width: 64em) {
+    .intro__figure {
+        max-width: 20rem;
+    }
+}
+
+.intro__image-frame {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background-color: var(--color-gray-light);
+    border: var(--radius-base) solid var(--color-black);
+    box-shadow: 0.5rem 0.5rem 0 0 var(--color-black);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.intro__image-frame:hover {
+    transform: translate(-0.25rem, -0.25rem);
+    box-shadow: 0.75rem 0.75rem 0 0 var(--color-black);
+}
+
+.intro__image-frame::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,
+            transparent 40%,
+            rgba(255, 0, 153, 0.1) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.intro__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.intro__image-frame:hover .intro__image {
+    transform: scale(1.03);
+}
+
+.intro__caption {
+    margin-top: var(--space-3);
+    font-size: var(--font-size-xs);
+    color: var(--color-gray);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* --------------------------------------------------------------------------
+   Text Content
+   -------------------------------------------------------------------------- */
+
+.intro__text {
+    flex: 1;
+}
+
+.intro__eyebrow {
+    display: inline-block;
+    font-size: var(--font-size-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--color-pink);
+    margin-bottom: var(--space-4);
+    position: relative;
+    padding-left: var(--space-8);
+}
+
+.intro__eyebrow::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: var(--space-6);
+    height: 2px;
+    background-color: var(--color-pink);
+    transform: translateY(-50%);
+}
+
+.intro__title {
+    font-size: clamp(2rem, 8vw, 4rem);
+    line-height: 1;
+    margin-bottom: var(--space-6);
+    color: var(--color-black);
+}
+
+.intro__title-line {
+    display: block;
+}
+
+.intro__title-line--accent {
+    color: var(--color-pink);
+    position: relative;
+    display: inline-block;
+}
+
+.intro__title-line--accent::after {
+    content: '';
+    position: absolute;
+    bottom: 0.1em;
+    left: 0;
+    width: 100%;
+    height: 0.15em;
+    background-color: var(--color-neon);
+    opacity: 0.6;
+    z-index: -1;
+    transform: skewX(-5deg);
+}
+
+.intro__body {
+    font-size: var(--font-size-base);
+    line-height: 1.8;
+    color: var(--color-gray-dark);
+}
+
+.intro__body p {
+    margin-bottom: var(--space-4);
+}
+
+.intro__body p:last-child {
+    margin-bottom: 0;
+}
+
+.intro__body strong {
+    color: var(--color-black);
+    font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   Reduced Motion
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .intro__image-frame,
+    .intro__image {
+        transition: none;
+    }
+}

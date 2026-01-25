@@ -34,10 +34,12 @@
     width: 100%;
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     padding: 6rem var(--space-4);
+    gap: 2rem;
 }
 
 .pp-universe__bg-gradient {
@@ -76,17 +78,25 @@
     z-index: 5;
     width: 70vw;
     height: 70vw;
-    margin-top: -20%;
+    margin-top: 0;
     max-width: 30rem;
     max-height: 30rem;
     filter: drop-shadow(var(--space-4) var(--space-4) 0 rgba(0, 0, 0, 0.5));
+    order: 2;
 }
 
 @media (min-width: 48em) {
+    .pp-universe__content {
+        display: flex;
+        flex-direction: row;
+        gap: 0;
+    }
+
     .pp-universe__figure {
         width: 40vw;
         height: 40vw;
         margin-top: 0;
+        order: unset;
     }
 }
 
@@ -116,36 +126,52 @@
     }
 }
 
-/* Floating Cards */
+/* Floating Cards Container */
 .pp-universe__cards {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 10;
+    display: contents;
 }
 
+@media (min-width: 48em) {
+    .pp-universe__cards {
+        display: block;
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 10;
+    }
+}
+
+/* Base Card Styles */
 .pp-card {
-    position: absolute;
+    position: relative;
     background: var(--color-white);
     border: var(--radius-base) solid var(--color-black);
     padding: var(--space-6);
     box-shadow: var(--space-2) var(--space-2) 0 var(--color-black);
-    max-width: 20rem;
+    max-width: 100%;
+    width: 100%;
     pointer-events: auto;
     transition: transform var(--transition-fast);
 }
 
-.pp-card:hover {
-    transform: scale(1.05);
-    z-index: 20;
+@media (min-width: 48em) {
+    .pp-card {
+        position: absolute;
+        max-width: 20rem;
+        width: auto;
+    }
+
+    .pp-card:hover {
+        transform: scale(1.05);
+        z-index: 20;
+    }
 }
 
-/* Card 1 - Mobile First */
+/* Card 1 */
 .pp-card--1 {
-    top: 10%;
-    left: 5%;
+    order: 1;
     transform: rotate(-2deg);
-    max-width: 15rem;
+    margin: 0 auto;
 }
 
 @media (min-width: 48em) {
@@ -154,15 +180,16 @@
         left: 10%;
         transform: rotate(-5deg);
         max-width: 20rem;
+        order: unset;
+        margin: 0;
     }
 }
 
-/* Card 2 - Mobile First */
+/* Card 2 */
 .pp-card--2 {
-    bottom: 10%;
-    right: 5%;
-    transform: rotate(3deg);
-    max-width: 18rem;
+    order: 3;
+    transform: rotate(1deg);
+    margin: 0 auto;
 }
 
 @media (min-width: 48em) {
@@ -170,6 +197,9 @@
         bottom: 20%;
         right: 10%;
         max-width: 25rem;
+        order: unset;
+        margin: 0;
+        transform: rotate(3deg);
     }
 }
 
@@ -197,6 +227,7 @@
 .pp-card__text {
     font-size: var(--font-size-4xl);
     line-height: 1;
+    word-break: break-word;
 }
 
 .pp-card__tag {
@@ -212,6 +243,10 @@
 .pp-card__desc {
     font-size: var(--font-size-base);
     line-height: 1.4;
+}
+
+.pp-card__desc+.pp-card__desc {
+    margin-top: 1rem;
 }
 
 /* Character Styles */
