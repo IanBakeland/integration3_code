@@ -56,7 +56,7 @@
   /* Typography - Font Families */
   --font-sans: 'Arial', sans-serif;
   --font-brutal: 'Arial Black', 'Impact', sans-serif;
-  --font-mono: 'Courier New', monospace;
+  --font-mono: 'Tektur', sans-serif;
 
   /* Border Radius */
   --radius-sm: 0.125rem;
@@ -139,7 +139,6 @@ body.locked {
 
 .font-mono {
   font-family: var(--font-mono);
-  font-weight: bold;
 }
 
 /* ============================================ */
