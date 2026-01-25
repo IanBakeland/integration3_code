@@ -4,7 +4,7 @@ import { initHero } from './sections/hero.js';
 import { initPukPukAnimations } from './sections/pukpuk.js';
 import { initMaskSection } from './sections/mask.js';
 import { initBearSection } from './sections/bear.js';
-import { initCensoredSection } from './sections/censored.js';
+import { initNatureSection } from './sections/nature.js';
 import { initMuseumGallery } from './sections/museum-gallery.js';
 
 
@@ -34,5 +34,5 @@ function unlockContent() {
 initPukPukAnimations();
 initMaskSection();
 initBearSection();
-initCensoredSection();
+initNatureSection();
 initMuseumGallery();
